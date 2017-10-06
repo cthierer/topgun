@@ -1,0 +1,51 @@
+{
+  "name": "topgun",
+  "version": "1.0.0",
+  "description": "wedding website for Lindsay and Tom",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "make build",
+    "start": "serve dist",
+    "develop": "nodemon -w content -w layouts -w index.js -e md,html,js -x 'npm start'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cthierer/topgun.git"
+  },
+  "author": "Chris Thierer <cthierer1@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cthierer/topgun/issues"
+  },
+  "homepage": "https://github.com/cthierer/topgun#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-builtin-extend": "^1.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "chalk": "^2.1.0",
+    "css-loader": "^0.28.7",
+    "ejs": "^2.5.7",
+    "extract-text-webpack-plugin": "^3.0.1",
+    "markdown-it-classy": "^0.2.0",
+    "metalsmith": "^2.3.0",
+    "metalsmith-layouts": "^1.8.1",
+    "metalsmith-markdownit": "^0.4.0",
+    "metalsmith-permalinks": "^0.5.0",
+    "metalsmith-publish": "^0.1.5",
+    "postcss": "^6.0.13",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^11.0.0",
+    "postcss-loader": "^2.0.6",
+    "serve": "^6.2.0",
+    "style-loader": "^0.19.0",
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "webpack": "^3.6.0",
+    "webpack-merge": "^4.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
+}

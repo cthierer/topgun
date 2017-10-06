@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+  <title><%= title %></title>
+  <% inject.styles.forEach((href) => { %>
+  <link rel="stylesheet" type="text/css" href="<%= href %>">
+  <% }) %>
+</head>
+<body>
+  <%- contents %>
+  <% inject.scripts.forEach((src) => { %>
+  <script type="text/javascript" src="<%= src %>"></script>
+  <% }) %>
+</body>
+</html>
