@@ -6,7 +6,7 @@
   "scripts": {
     "prestart": "make build",
     "start": "serve dist",
-    "develop": "nodemon -w content -w layouts -w index.js -e md,html,js -x 'npm start'"
+    "develop": "nodemon -w content -w layouts -w src -w index.js -e md,html,js -x 'npm start'"
   },
   "repository": {
     "type": "git",
