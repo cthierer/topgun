@@ -1,0 +1,7 @@
+
+[build]
+  publish = "public"
+  command = "make build"
+
+[context.branch-deploy.environment]
+  NODE_ENV = "development"
