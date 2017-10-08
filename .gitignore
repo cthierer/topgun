@@ -60,3 +60,5 @@ typings/
 # custom
 dist
 public
+.DS_Store
+._.DS_Store

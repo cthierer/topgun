@@ -1,0 +1,15 @@
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.behind {
+  position: absolute;
+  display: block;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}

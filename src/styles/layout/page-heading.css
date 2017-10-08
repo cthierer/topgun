@@ -1,0 +1,39 @@
+
+.page-heading {
+  & h2 {
+    text-align: center;
+    font-size: 2em;
+    position: relative;
+    margin-bottom: 6px;
+  }
+
+  & .decorate-text {
+    fill: var(--color-pink);
+    height: 1.5em;
+
+    &.right {
+      transform: scaleX(-1);
+    }
+  }
+
+  & .accent {
+    top: 28px;
+    width: 95%;
+    margin: 0;
+    border-color: var(--color-pink);
+    border-width: 2px;
+  }
+
+  & .navbar .nav-link {
+    margin-left: 16px;
+    margin-right: 16px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

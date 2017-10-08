@@ -1,0 +1,64 @@
+
+.color-collection {
+  lost-utility: clearfix;
+}
+
+.color-collection .swatch-wrapper {
+  lost-column: 1/2;
+  margin-bottom: 12px;
+
+  @media (min-width: 576px) {
+    lost-column: 1/4;
+  }
+}
+
+.color-collection .swatch {
+  height: 150px;
+  border: 1px solid var(--gray-light);
+}
+
+.swatch .label {
+  background-color: #fff;
+
+  text-align: center;
+
+  padding-top: 3px;
+  padding-bottom: 3px;
+  width: 100%;
+}
+
+.swatch.color-primary-1 {
+  background-color: var(--color-slate-blue);
+}
+
+.swatch.color-primary-2 {
+  background-color: var(--color-teal);
+}
+
+.swatch.color-primary-3 {
+  background-color: var(--color-gray);
+}
+
+.swatch.color-primary-4 {
+  background-color: var(--color-pink);
+}
+
+.swatch.color-text {
+  background-color: var(--color-text);
+}
+
+.swatch.color-links {
+  background-color: var(--color-links);
+}
+
+.swatch.gray-dark {
+  background-color: var(--gray-dark);
+}
+
+.swatch.gray-normal {
+  background-color: var(--gray-normal);
+}
+
+.swatch.gray-light {
+  background-color: var(--gray-light);
+}

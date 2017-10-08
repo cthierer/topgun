@@ -1,0 +1,33 @@
+
+.navbar .nav-link {
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+  font-size: 1.2em;
+  text-align: center;
+  text-transform: uppercase;
+
+  &:active,
+  &:hover,
+  &:focus {
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    cursor: pointer;
+  }
+
+  &.active {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      cursor: default;
+      font-weight: 700;
+      text-decoration: none;
+    }
+  }
+}

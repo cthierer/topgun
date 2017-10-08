@@ -1,0 +1,82 @@
+
+@import 'vars.css';
+@import 'fonts.css';
+@import 'grid.css';
+@import 'content.css';
+@import 'layout.css';
+@import 'styles.css';
+
+body {
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-size: 12pt;
+  line-height: 1.15;
+}
+
+body,
+.page-background {
+  background-color: var(--color-page);
+}
+
+a {
+  color: var(--color-links);
+
+  &,
+  &:link,
+  &:visited {
+    font-weight: 400;
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 0;
+  height: 0;
+  display: block;
+  visibility: hidden;
+}
+
+/* font definitions */
+
+body,
+.text-body {
+  font-family: 'PT Serif', serif;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6,
+.text-heading {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+}
+
+.text-script {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+}
+
+.text-mono {
+  font-family: 'PT Mono', monospace;
+}
+
+p.text-script,
+blockquote.text-script,
+div.text-script,
+span.text-script {
+  font-size: 1.5em;
+}
+
+/* colors */
