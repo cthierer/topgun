@@ -1,0 +1,12 @@
+- label: About
+  path: /about
+- label: Our day
+  path: /our-day
+- label: Accommodations
+  path: /accommodations
+- label: Photos
+  path: /photos
+- label: Registry
+  path: /registry
+- label: Updates
+  path: /updates

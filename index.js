@@ -5,6 +5,9 @@ const layouts = require('metalsmith-layouts')
 const permalinks = require('metalsmith-permalinks')
 const publish = require('metalsmith-publish')
 const inlineSource = require('metalsmith-inline-source')
+const collections = require('metalsmith-collections')
+const defaultValues = require('metalsmith-default-values')
+const metadata = require('metalsmith-metadata')
 const chalk = require('chalk')
 const moment = require('moment')
 const webpack = require('./plugins/webpack')
@@ -32,9 +35,21 @@ Metalsmith(__dirname)
   .source('./content')
   .destination('./public')
   .clean(true)
+  .use(defaultValues([
+    {
+      pattern: '**/*.md',
+      defaults: {
+        description: '',
+      },
+    },
+  ]))
   .use(publish({
     draft: env !== 'production'
   }))
+  .use(metadata({
+    navigation: '_data/navigation.yml',
+  }))
+  //.use(collections({}))
   .use(markdown)
   .use(permalinks())
   .use(webpack(webpackConfig))
