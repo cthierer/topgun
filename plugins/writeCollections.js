@@ -1,4 +1,5 @@
 
+const path = require('path')
 const slugify = require('slugify')
 
 module.exports = function init({
@@ -39,7 +40,17 @@ module.exports = function init({
         const contents = prettyPrint
           ? JSON.stringify(contentsObj, null, 2)
           : JSON.stringify(contents)
-        return { [`${name}.json`]: { contents }}
+
+        return {
+          [`${name}.json`]: {
+            contents,
+          },
+          [`${path.join(name, 'index.html')}`]: {
+            contents: '',
+            description,
+            ...metadata,
+          },
+        }
       })
       .reduce((last, curr) => ({ ...last, ...curr }))
 
