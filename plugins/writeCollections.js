@@ -22,10 +22,11 @@ module.exports = function init({
           contents: contents.toString('utf8'),
           description: description.length > 0 ? markdown.render(description) : undefined,
           path,
-          key: slugify(title.toLowerCase()),
+          slug: slugify(title.toLowerCase()),
         }))
         const contentsObj = {
           ...metadata,
+          key: name,
           description: description.length > 0 ? markdown.render(description) : undefined,
           files,
         }
