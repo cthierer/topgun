@@ -19,15 +19,21 @@ module.exports = function init({
           path,
         }) => ({
           title,
-          contents: contents.toString('utf8'),
-          description: description.length > 0 ? markdown.render(description) : undefined,
+          contents: Buffer.isBuffer(contents)
+            ? contents.toString('utf8')
+            : contents,
+          description: description.length > 0
+            ? markdown.render(description)
+            : undefined,
           path,
           slug: slugify(title.toLowerCase()),
         }))
         const contentsObj = {
           ...metadata,
           key: name,
-          description: description.length > 0 ? markdown.render(description) : undefined,
+          description: description.length > 0
+            ? markdown.render(description)
+            : undefined,
           files,
         }
         const contents = prettyPrint
