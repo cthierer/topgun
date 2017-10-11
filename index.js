@@ -54,6 +54,7 @@ Metalsmith(__dirname)
   }))
   .use(ignore([
     '**/_*.*',
+    '**/[^_headers]',
   ]))
   .use(collections({
     about: {
