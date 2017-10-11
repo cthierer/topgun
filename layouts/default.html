@@ -63,7 +63,7 @@
   </footer>
   <script type="text/javascript">
   window.topgun = window.topgun || {}
-  window.topgun.state = JSON.parse('<%- JSON.stringify({ navigation }) %>')
+  window.topgun.state = <%- JSON.stringify({ navigation }) %>
   </script>
   <% inject.scripts.forEach((src) => { %>
   <script type="text/javascript" src="<%= src %>"></script>
