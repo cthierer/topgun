@@ -8,9 +8,11 @@ const inlineSource = require('metalsmith-inline-source')
 const collections = require('metalsmith-collections')
 const defaultValues = require('metalsmith-default-values')
 const metadata = require('metalsmith-metadata')
+const ignore = require('metalsmith-ignore')
 const chalk = require('chalk')
 const moment = require('moment')
 const webpack = require('./plugins/webpack')
+const writeCollections = require('./plugins/writeCollections')
 
 const env = process.env.NODE_ENV === 'production' ? 'production' : 'develop'
 const webpackConfig = require(`./webpack.${env}.js`)
@@ -39,6 +41,7 @@ Metalsmith(__dirname)
     {
       pattern: '**/*.md',
       defaults: {
+        title: '',
         description: '',
       },
     },
@@ -49,14 +52,35 @@ Metalsmith(__dirname)
   .use(metadata({
     navigation: '_data/navigation.yml',
   }))
-  //.use(collections({}))
+  .use(ignore([
+    '**/_*.*',
+  ]))
+  .use(collections({
+    about: {
+      pattern: 'about/**/*.md',
+      metadata: 'content/about/_collection.yml',
+    },
+    accommodations: {
+      pattern: 'accommodations/**/*.md',
+      metadata: 'content/accommodations/_collection.yml',
+    },
+    event: {
+      pattern: 'event/**/*.md',
+      metadata: 'content/event/_collection.yml',
+    },
+  }))
   .use(markdown)
   .use(permalinks())
+  .use(writeCollections({
+    prettyPrint: process.env.NODE_ENV !== 'production',
+    markdown: markdown.parser,
+  }))
   .use(webpack(webpackConfig))
   .use(layouts({
     engine: 'ejs',
     default: 'default.html',
     directory: './layouts',
+    pattern: '**/*.html',
   }))
   .use(inlineSource())
   .build((err, files) => {
