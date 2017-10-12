@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import store from './store'
 import loadNavigation from './navigation/actions/loadNavigation'
 import AppNavBar from './navigation/containers/AppNavBar'
+import App from './app'
 import './styles/index.css'
 
 /* global window */
@@ -18,3 +19,8 @@ if (!getConfig('navigation.disable')) {
     document.getElementById('topNav'),
   )
 }
+
+render(
+  <Provider store={store}><App /></Provider>,
+  document.getElementById('app'),
+)

@@ -41,6 +41,9 @@ module.exports = function init({
           ? JSON.stringify(contentsObj, null, 2)
           : JSON.stringify(contents)
 
+
+        metalsmith.metadata().collections[name] = contentsObj
+
         return {
           [`${name}.json`]: {
             contents,
@@ -49,6 +52,7 @@ module.exports = function init({
             contents: '',
             description,
             ...metadata,
+            collection: [name],
           },
         }
       })

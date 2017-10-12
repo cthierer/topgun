@@ -62,8 +62,18 @@
     </div>
   </footer>
   <script type="text/javascript">
+  <%
+  const _collection = locals.collection || []
+  const _currCollectionName = _collection[0]
+  const _currCollection = _currCollectionName && collections[_currCollectionName]
+  %>
   window.topgun = window.topgun || {}
-  window.topgun.state = <%- JSON.stringify({ navigation }) %>
+  window.topgun.state = <%- JSON.stringify({
+    navigation,
+    content: {
+      collection: _currCollection,
+    }
+  }) %>
   </script>
   <% inject.scripts.forEach((src) => { %>
   <script type="text/javascript" src="<%= src %>"></script>

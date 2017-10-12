@@ -43,6 +43,7 @@ Metalsmith(__dirname)
       defaults: {
         title: '',
         description: '',
+        collection: [],
       },
     },
   ]))

@@ -7,6 +7,8 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import { connectRoutes } from 'redux-first-router'
 import createHistory from 'history/createBrowserHistory'
 import navigationReducer from './navigation/reducer'
+import contentReducer from './content/reducer'
+import routesMap from './routesMap'
 
 /* global window */
 
@@ -15,7 +17,6 @@ const { topgun = {} } = global
 
 const history = createHistory()
 const initialState = topgun.state || {}
-const routesMap = {}
 
 const composeEnhancers = process.env.NODE_ENV !== 'production'
   ? composeWithDevTools
@@ -30,6 +31,7 @@ const {
 const rootReducer = combineReducers({
   location: routeReducer,
   navigation: navigationReducer,
+  content: contentReducer,
 })
 
 const middlewares = applyMiddleware(
