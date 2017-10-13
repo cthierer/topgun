@@ -7,9 +7,16 @@
     margin-bottom: 6px;
   }
 
+  & .section-title {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
   & .decorate-text {
     fill: var(--color-pink);
     height: 1.5em;
+    padding-left: 38px;
+    padding-right: 38px;
 
     &.right {
       transform: scaleX(-1);
