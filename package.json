@@ -4,8 +4,9 @@
   "description": "wedding website for Lindsay and Tom",
   "main": "index.js",
   "scripts": {
+    "build": "make build",
     "start": "serve --clipless public",
-    "develop": "nodemon -w content -w layouts -w src -w index.js -e md,html,js,css,jsx -x 'make build && npm start'"
+    "develop": "nodemon -w content -w layouts -w src -w plugins -w index.js -e md,html,js,css,jsx -x 'NODE_ENV=development run-s -c build start'"
   },
   "repository": {
     "type": "git",
