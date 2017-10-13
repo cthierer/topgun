@@ -20,7 +20,7 @@ export default {
         await dispatch(loadCollection(toLoad))
 
         const {
-          content: { collection: loaded } = {}
+          content: { collection: loaded } = {},
         } = getState()
 
         if (!loaded) {

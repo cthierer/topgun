@@ -7,7 +7,7 @@ const extractCSS = new ExtractTextPlugin('styles.css')
 module.exports = {
   entry: [
     'babel-polyfill',
-    './src/index.js',
+    './src/index.jsx',
   ],
   module: {
     rules: [

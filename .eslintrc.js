@@ -6,7 +6,8 @@ module.exports = {
     semi: [2, 'never'],
     'no-unused-vars': [2, {'args': 'after-used', 'argsIgnorePattern': '^_'}],
     'no-unused-expressions': [2, { allowShortCircuit: true, allowTernary: true }],
-    'no-param-reassign': [2, {'props': false}]
+    'no-param-reassign': [2, {'props': false}],
+    'react/prop-types': [0],
   },
   globals: {
     require: true

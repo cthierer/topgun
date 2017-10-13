@@ -3,12 +3,12 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import store from './store'
-import loadNavigation from './navigation/actions/loadNavigation'
-import AppNavBar from './navigation/containers/AppNavBar'
-import App from './app'
+import AppNavBar from './containers/AppNavBar'
+import App from './App'
+
 import './styles/index.css'
 
-/* global window */
+/* global window document */
 
 const config = window.topgun || {}
 const getConfig = path => path.split('.').reduce((ref, attr) => ref && ref[attr], config)
