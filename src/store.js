@@ -2,7 +2,7 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
 import reduxThunk from 'redux-thunk'
 import { createLogger } from 'redux-logger'
-import { connectRoutes } from 'redux-first-router'
+import { connectRoutes, NOT_FOUND, redirect } from 'redux-first-router'
 import createHistory from 'history/createBrowserHistory'
 import navigationReducer from './navigation/reducer'
 import contentReducer from './content/reducer'
@@ -20,7 +20,13 @@ const {
   reducer: routeReducer,
   middleware: routeMiddleware,
   enhancer: routeEnhancer,
-} = connectRoutes(history, routesMap)
+} = connectRoutes(history, routesMap, {
+  onBeforeChange: (dispatch, getState, { action: { type } }) => {
+    if (type === NOT_FOUND) {
+      dispatch(redirect({ type: 'ROUTE_TO_LANDING' }))
+    }
+  },
+})
 
 const rootReducer = combineReducers({
   location: routeReducer,

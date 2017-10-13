@@ -7,6 +7,15 @@ const aliases = new Map([
 ])
 
 export default {
+  ROUTE_TO_LANDING: {
+    path: '/',
+    thunk: dispatch => dispatch({
+      type: 'ROUTE_TO_SECTION',
+      payload: {
+        collection: 'about',
+      },
+    }),
+  },
   ROUTE_TO_SECTION: {
     path: '/:collection/:page?',
     thunk: async (dispatch, getState) => {

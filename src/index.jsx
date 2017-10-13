@@ -5,13 +5,14 @@ import { Provider } from 'react-redux'
 import store from './store'
 import AppNavBar from './containers/AppNavBar'
 import App from './App'
+import { get } from './utils'
 
 import './styles/index.css'
 
 /* global window document */
 
 const config = window.topgun || {}
-const getConfig = path => path.split('.').reduce((ref, attr) => ref && ref[attr], config)
+const getConfig = get(config)
 
 if (!getConfig('navigation.disable')) {
   render(
