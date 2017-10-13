@@ -39,7 +39,7 @@ module.exports = function init({
         }
         const contents = prettyPrint
           ? JSON.stringify(contentsObj, null, 2)
-          : JSON.stringify(contents)
+          : JSON.stringify(contentsObj)
 
 
         metalsmith.metadata().collections[name] = contentsObj
