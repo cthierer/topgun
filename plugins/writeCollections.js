@@ -1,6 +1,19 @@
 
 const path = require('path')
-const slugify = require('slugify')
+
+function getFileName(filePath) {
+  const [, fileName] = /\/(.+)$/i.exec(filePath)
+  return fileName
+}
+
+function getPath(basePath, filePath) {
+  if (!basePath) {
+    return filePath
+  }
+
+  const fileName = getFileName(filePath)
+  return path.posix.join(basePath, fileName)
+}
 
 module.exports = function init({
   prettyPrint = false,
@@ -12,12 +25,16 @@ module.exports = function init({
       .keys(collections)
       .map((name) => {
         const collection = collections[name]
-        const { description = '', ...metadata } = collection.metadata || {}
+        const {
+          description: collectionDescription = '',
+          permalink = name,
+          ...metadata
+        } = collection.metadata || {}
         const files = collection.map(({
           title,
           contents,
           description = '',
-          path,
+          path: filePath,
         }) => ({
           title,
           contents: Buffer.isBuffer(contents)
@@ -26,14 +43,14 @@ module.exports = function init({
           description: description.length > 0
             ? markdown.render(description)
             : undefined,
-          path,
-          slug: slugify(title.toLowerCase()),
+          path: getPath(permalink, filePath),
+          slug: getFileName(filePath),
         }))
         const contentsObj = {
           ...metadata,
           key: name,
-          description: description.length > 0
-            ? markdown.render(description)
+          description: collectionDescription.length > 0
+            ? markdown.render(collectionDescription)
             : undefined,
           files,
         }
@@ -49,9 +66,8 @@ module.exports = function init({
             contents,
           },
           [`${path.join(name, 'index.html')}`]: {
+            ...contentsObj,
             contents: '',
-            description,
-            ...metadata,
             collection: [name],
           },
         }

@@ -2,9 +2,7 @@
 import { NOT_FOUND } from 'redux-first-router'
 import loadCollection from './content/actions/loadCollection'
 
-const aliases = new Map([
-  ['our-day', 'event'],
-])
+const aliases = new Map([])
 
 export default {
   ROUTE_TO_LANDING: {

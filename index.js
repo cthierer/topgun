@@ -1,4 +1,6 @@
 
+/* eslint-disable no-console */
+
 const Metalsmith = require('metalsmith')
 const markdownIt = require('metalsmith-markdownit')
 const layouts = require('metalsmith-layouts')
@@ -15,7 +17,7 @@ const webpack = require('./plugins/webpack')
 const writeCollections = require('./plugins/writeCollections')
 
 const env = process.env.NODE_ENV === 'production' ? 'production' : 'develop'
-const webpackConfig = require(`./webpack.${env}.js`)
+const webpackConfig = require(`./webpack.${env}.js`) // eslint-disable-line import/no-dynamic-require
 
 const markdown = markdownIt({
   html: true,
@@ -32,7 +34,7 @@ Metalsmith(__dirname)
     sitename: 'Lindsay & Thomas',
     siteheader: 'Lindsay & Thomas',
     eventdate: moment('2018-05-12'),
-    hashtags: ['#Stage5Clingan']
+    hashtags: ['#Stage5Clingan'],
   })
   .source('./content')
   .destination('./public')
@@ -48,7 +50,7 @@ Metalsmith(__dirname)
     },
   ]))
   .use(publish({
-    draft: env !== 'production'
+    draft: env !== 'production',
   }))
   .use(metadata({
     navigation: '_data/navigation.yml',
@@ -66,9 +68,9 @@ Metalsmith(__dirname)
       pattern: 'accommodations/**/*.md',
       metadata: 'content/accommodations/_collection.yml',
     },
-    event: {
-      pattern: 'event/**/*.md',
-      metadata: 'content/event/_collection.yml',
+    'our-day': {
+      pattern: 'our-day/**/*.md',
+      metadata: 'content/our-day/_collection.yml',
     },
   }))
   .use(markdown)
