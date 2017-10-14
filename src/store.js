@@ -7,6 +7,7 @@ import restoreScroll from 'redux-first-router-restore-scroll'
 import createHistory from 'history/createBrowserHistory'
 import navigationReducer from './navigation/reducer'
 import contentReducer from './content/reducer'
+import metadataReducer from './metadata/reducer'
 import routesMap from './routesMap'
 
 /* global window */
@@ -43,6 +44,7 @@ const rootReducer = combineReducers({
   location: routeReducer,
   navigation: navigationReducer,
   content: contentReducer,
+  metadata: metadataReducer,
 })
 
 const middlewares = applyMiddleware(

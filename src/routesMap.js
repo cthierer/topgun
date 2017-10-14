@@ -1,6 +1,7 @@
 
 import { NOT_FOUND } from 'redux-first-router'
 import loadCollection from './content/actions/loadCollection'
+import updateMetadata from './metadata/actions/updateMetadata'
 
 const aliases = new Map([])
 
@@ -19,7 +20,7 @@ export default {
     thunk: async (dispatch, getState) => {
       const {
         content: { collection: { key } = {} } = {},
-        location: { payload: { collection } = {} } = {},
+        location: { payload: { collection, page } = {} } = {},
       } = getState()
 
       if (!key || key !== collection) {
@@ -32,7 +33,17 @@ export default {
 
         if (!loaded) {
           dispatch({ type: NOT_FOUND })
+          return
         }
+      }
+
+      const { content: { collection: loaded } = {} } = getState()
+
+      if (loaded) {
+        const { title } = page
+          ? loaded.files.find(({ slug }) => slug === page)
+          : loaded
+        dispatch(updateMetadata({ title }))
       }
     },
   },
