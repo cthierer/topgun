@@ -8,17 +8,22 @@
 
 body {
   margin: 0;
-  margin-top: 76px;
 
   color: var(--color-text);
+  background-color: var(--color-slate-blue);
 
   font-size: 12pt;
   line-height: 1.15;
 }
 
-body,
 .page-background {
   background-color: var(--color-page);
+}
+
+.page-wrapper {
+  position: absolute;
+  width: 100%;
+  z-index: -10;
 }
 
 a {

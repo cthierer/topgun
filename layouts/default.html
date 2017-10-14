@@ -8,57 +8,59 @@
   <% }) %>
 </head>
 <body>
-  <header id="siteHeader">
-    <div class="site-heading-bg"></div>
-    <div class="site-heading">
-        <h1 class="text-script"><%= siteheader %></h1>
+  <div class="page-background page-wrapper">
+    <header id="siteHeader">
+      <div class="site-heading-bg"></div>
+      <div class="site-heading">
+          <h1 class="text-script"><%= siteheader %></h1>
+      </div>
+      <div id="banner"></div>
+      <div id="topNav" class="container"></div>
+    </header>
+    <div class="container">
+      <main id="app" class="with-padding"></main>
     </div>
-    <div id="banner"></div>
-    <div id="topNav" class="container"></div>
-  </header>
-  <div class="container">
-    <main id="app" class="with-padding"></main>
-  </div>
-  <footer id="siteFooter">
-    <div class="footer-background">
-      <div class="container">
-        <div class="footer-contents">
-          <header class="footer-section double text-center">
-            <img inline class="decorate-text" src="src/assets/wedding-bells.svg" />
-            <h2 class="sr-only">Footer</h2>
-            <div class="names text-script"><%= siteheader %></div>
-            <div class="event-date text-heading"><%= eventdate.format('LL') %></div>
-          </header>
-          <section class="footer-section">
-            <h3>Say hello!</h3>
-            <a class="text-large" href="javascript:;">hello@stage5clingan.com</a>
-            <h3>Share</h3>
-            <ul class="list-unstyled">
-              <% hashtags.forEach((hashtag) => { %>
-              <li class="text-large text-mono"><%= hashtag %></li>
-              <% }) %>
-            </ul>
-          </section>
-          <section class="footer-section">
-            <p>
-              The engagement photos featured on this site were done by
-              <a href="javascript:;"><strong>Magnality Photography</strong></a>.
-            </p>
-            <p>
-              <small>
-                <a href="javascript:;">Attributions &amp; imprint information</a>
-              </small>
-            </p>
-            <p>
-              <small>
-                &copy;2017 Lindsay &amp; Thomas Clingan
-              </small>
-            </p>
-          </section>
+    <footer id="siteFooter">
+      <div class="footer-background">
+        <div class="container">
+          <div class="footer-contents">
+            <header class="footer-section double text-center">
+              <img inline class="decorate-text" src="src/assets/wedding-bells.svg" />
+              <h2 class="sr-only">Footer</h2>
+              <div class="names text-script"><%= siteheader %></div>
+              <div class="event-date text-heading"><%= eventdate.format('LL') %></div>
+            </header>
+            <section class="footer-section">
+              <h3>Say hello!</h3>
+              <a class="text-large" href="javascript:;">hello@stage5clingan.com</a>
+              <h3>Share</h3>
+              <ul class="list-unstyled">
+                <% hashtags.forEach((hashtag) => { %>
+                <li class="text-large text-mono"><%= hashtag %></li>
+                <% }) %>
+              </ul>
+            </section>
+            <section class="footer-section">
+              <p>
+                The engagement photos featured on this site were done by
+                <a href="javascript:;"><strong>Magnality Photography</strong></a>.
+              </p>
+              <p>
+                <small>
+                  <a href="javascript:;">Attributions &amp; imprint information</a>
+                </small>
+              </p>
+              <p>
+                <small>
+                  &copy;2017 Lindsay &amp; Thomas Clingan
+                </small>
+              </p>
+            </section>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
   <script type="text/javascript">
   <%
   const _collection = locals.collection || []
