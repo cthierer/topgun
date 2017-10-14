@@ -6,6 +6,4 @@ const mapStateToProps = state => ({
   items: state.navigation,
 })
 
-export default connect(
-  mapStateToProps,
-)(NavBar)
+export default connect(mapStateToProps)(NavBar)

@@ -9,6 +9,4 @@ const mapStateToProps = state => ({
   articles: get(state, 'content.collection.files', []),
 })
 
-export default connect(
-  mapStateToProps
-)(Collection)
+export default connect(mapStateToProps)(Collection)
