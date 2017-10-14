@@ -40,4 +40,7 @@ if (bannerElement) {
   )
 }
 
-window.addEventListener('resize', handleResize(store), false)
+const doResize = handleResize(store)
+
+window.addEventListener('resize', doResize, false)
+doResize()

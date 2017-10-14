@@ -2,9 +2,17 @@
 .page-heading {
   & h2 {
     text-align: center;
-    font-size: 2em;
+    font-size: 1.5em;
     position: relative;
     margin-bottom: 6px;
+    margin-top: 0;
+
+    @media (min-width: 768px) {
+      & {
+        font-size: 2em;
+        margin-top: 1.5em;
+      }
+    }
   }
 
   & .section-title {
@@ -12,23 +20,43 @@
     padding-left: 8px;
   }
 
+  @media (min-width: 992px) {
+    & .lead {
+      line-height: 1.5;
+    }
+  }
+
   & .decorate-text {
     fill: var(--color-pink);
     height: 1.5em;
-    padding-left: 38px;
-    padding-right: 38px;
+    padding-left: 5px;
+    padding-right: 5px;
 
     &.right {
       transform: scaleX(-1);
     }
+
+    @media (min-width: 768px) {
+      & {
+        padding-left: 38px;
+        padding-right: 38px;
+      }
+    }
   }
 
   & .accent {
+    display: none;
     top: 28px;
     width: 95%;
     margin: 0;
     border-color: var(--color-pink);
     border-width: 2px;
+
+    @media (min-width: 768px) {
+      & {
+        display: block;
+      }
+    }
   }
 
   & .navbar .nav-link {

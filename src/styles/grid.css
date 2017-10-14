@@ -5,8 +5,15 @@
 }
 
 .with-padding {
-  padding-left: 7%;
-  padding-right: 7%;
+  padding-left: 3%;
+  padding-right: 3%;
+
+  @media (min-width: 992px) {
+    & {
+      padding-left: 7%;
+      padding-right: 7%;
+    }
+  }
 }
 
 @media (min-width: 576px) {
@@ -15,7 +22,7 @@
   }
 }
 
-@media (min-width: 765px) {
+@media (min-width: 768px) {
   .container {
     width: 720px;
   }

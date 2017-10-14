@@ -1,6 +1,20 @@
 
 #siteFooter {
-  margin-top: 6em;
+  margin-top: 3em;
+
+  & .footer-section {
+    margin-bottom: 3em;
+    text-align: center;
+  }
+
+  & .footer-section:last-child {
+    margin-bottom: 0;
+  }
+
+  & .with-padding {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
 
   & .footer-background {
     border-top: 1px solid var(--color-slate-blue-darker);
@@ -15,13 +29,28 @@
     }
   }
 
-  @media (min-width: 765px) {
+  @media (min-width: 768px) {
+    & {
+      margin-top: 6em;
+    }
+
     & .footer-contents {
       lost-utility: clearfix;
     }
 
     & .footer-section {
       lost-column: 1/3;
+      margin-bottom: 0;
+      text-align: left;
+
+      &.text-center {
+        text-align: center;
+      }
+    }
+
+    & .with-padding {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 

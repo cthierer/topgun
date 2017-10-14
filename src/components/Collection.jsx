@@ -35,7 +35,7 @@ export default function Collection({
         {/* eslint-enable react/no-danger */}
       </header>
       {(hasMultipleArticles || hasDescription) && <hr className="accent" />}
-      <div id="contents">
+      <div id="contents" className={hasMultipleArticles ? 'articles' : 'single'}>
         {articles.map(article => (
           <Article
             key={article.slug}
