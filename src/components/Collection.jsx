@@ -26,10 +26,12 @@ export default function Collection({
           <img className="page-background decorate-text right" src={floralDesign} alt="" />
         </h2>
         {hasMultipleArticles && <NavBar items={navLinks} />}
+        {/* eslint-disable react/no-danger */}
         {hasDescription && <section
           className="lead"
           dangerouslySetInnerHTML={wrapMarkup(description)}
         />}
+        {/* eslint-enable react/no-danger */}
       </header>
       {(hasMultipleArticles || hasDescription) && <hr className="accent" />}
       <div id="contents">

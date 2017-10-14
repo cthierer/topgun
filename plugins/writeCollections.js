@@ -45,6 +45,7 @@ module.exports = function init({
             : undefined,
           path: getPath(permalink, filePath),
           slug: getFileName(filePath),
+          collection: name,
         }))
         const contentsObj = {
           ...metadata,
