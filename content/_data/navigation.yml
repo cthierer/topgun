@@ -8,5 +8,3 @@
   path: /photos
 - label: Registry
   path: /registry
-- label: Updates
-  path: /updates
