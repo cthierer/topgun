@@ -8,3 +8,5 @@ export const get = curry((
 ) => path.split('.').reduce((ref, attr) => ref && ref[attr], obj) || defaultVal)
 
 export const wrapMarkup = markup => ({ __html: markup })
+
+export const getRandom = max => Math.floor(Math.random() * max)

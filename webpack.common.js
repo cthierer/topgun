@@ -1,6 +1,7 @@
 
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 
 const extractCSS = new ExtractTextPlugin('styles.css')
 
@@ -43,6 +44,10 @@ module.exports = {
   },
   plugins: [
     extractCSS,
+    new CopyPlugin([{
+      from: 'src/assets/banners',
+      to: 'banners',
+    }]),
   ],
   resolve: {
     extensions: ['.js', '.jsx'],

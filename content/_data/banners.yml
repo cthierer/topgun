@@ -1,0 +1,14 @@
+- route: '^/about(/.*)?$'
+  images:
+    - src: '/assets/banners/25.jpg'
+- route: '^/.*$'
+  images:
+    - src: '/assets/banners/1.jpg'
+    - src: '/assets/banners/4.jpg'
+    - src: '/assets/banners/6.jpg'
+    - src: '/assets/banners/8.jpg'
+    - src: '/assets/banners/10.jpg'
+    - src: '/assets/banners/12.jpg'
+    - src: '/assets/banners/15.jpg'
+    - src: '/assets/banners/17.jpg'
+    - src: '/assets/banners/18.jpg'

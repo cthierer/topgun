@@ -1,5 +1,5 @@
 
-import { NOT_FOUND } from 'redux-first-router'
+import { NOT_FOUND, redirect } from 'redux-first-router'
 import loadCollection from './content/actions/loadCollection'
 import updateMetadata from './metadata/actions/updateMetadata'
 
@@ -8,12 +8,12 @@ const aliases = new Map([])
 export default {
   ROUTE_TO_LANDING: {
     path: '/',
-    thunk: dispatch => dispatch({
+    thunk: dispatch => dispatch(redirect({
       type: 'ROUTE_TO_SECTION',
       payload: {
         collection: 'about',
       },
-    }),
+    })),
   },
   ROUTE_TO_SECTION: {
     path: '/:collection/:page?',
@@ -32,7 +32,7 @@ export default {
         } = getState()
 
         if (!loaded) {
-          dispatch({ type: NOT_FOUND })
+          dispatch(redirect({ type: NOT_FOUND }))
           return
         }
       }

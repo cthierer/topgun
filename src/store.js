@@ -10,8 +10,11 @@ import contentReducer from './content/reducer'
 import metadataReducer from './metadata/reducer'
 import coreReducer from './core/reducer'
 import routesMap from './routesMap'
+import { getRandom } from './utils'
 
 /* global window */
+
+import setBanner from './core/actions/setBanner'
 
 const global = window || {}
 const { topgun = {} } = global
@@ -34,9 +37,31 @@ const {
       return true
     },
   }),
-  onBeforeChange: (dispatch, getState, { action: { type } }) => {
+  onBeforeChange: (
+    dispatch,
+    getState,
+    {
+      action: {
+        type,
+        meta: {
+          location: {
+            current: { pathname },
+          },
+        },
+      },
+    },
+  ) => {
     if (type === NOT_FOUND) {
       dispatch(redirect({ type: 'ROUTE_TO_LANDING' }))
+      return
+    }
+
+    const { core: { banners = [] } = {} } = getState()
+    const { images: possibleBanners } = banners.find(({ route }) => pathname.match(route) !== null)
+    const banner = possibleBanners[getRandom(possibleBanners.length)]
+
+    if (banner) {
+      dispatch(setBanner(banner))
     }
   },
 })

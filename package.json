@@ -6,7 +6,7 @@
   "scripts": {
     "build": "make build",
     "start": "serve --clipless public",
-    "develop": "nodemon -w content -w layouts -w src -w plugins -w index.js -e md,html,js,css,jsx -x 'NODE_ENV=development run-s -c build start'"
+    "develop": "nodemon -w content -w layouts -w src -w plugins -w index.js -e md,html,js,css,jsx,yml -x 'NODE_ENV=development run-s -c build start'"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
     "babel-preset-react": "^6.24.1",
     "chalk": "^2.1.0",
     "classnames": "^2.2.5",
+    "copy-webpack-plugin": "^4.1.1",
     "css-loader": "^0.28.7",
     "ejs": "^2.5.7",
     "extract-text-webpack-plugin": "^3.0.1",

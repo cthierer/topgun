@@ -54,6 +54,7 @@ Metalsmith(__dirname)
   }))
   .use(metadata({
     navigation: '_data/navigation.yml',
+    banners: '_data/banners.yml',
   }))
   .use(ignore([
     '**/_*.*',
