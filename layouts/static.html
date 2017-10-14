@@ -7,91 +7,93 @@
   <% }) %>
 </head>
 <body>
-  <header id="siteHeader">
-    <div class="site-heading-bg"></div>
-    <div class="site-heading">
-        <h1 class="text-script"><%= siteheader %></h1>
-    </div>
-    <div class="site-banner background-image-1"></div>
-    <div class="container">
-      <nav id="topNav" class="navbar text-heading">
-        <div class="flex-center">
-          <a class="nav-link sweep-to-bottom" href="javascript:;">About</a>
-          <a class="nav-link active" href="javascript:;">Our day</a>
-          <a class="nav-link sweep-to-bottom" href="javascript:;">Accommodations</a>
-          <a class="nav-link sweep-to-bottom" href="javascript:;">Photos</a>
-          <a class="nav-link sweep-to-bottom" href="javascript:;">Registry</a>
-          <a class="nav-link sweep-to-bottom" href="javascript:;">Updates</a>
-        </div>
-      </nav>
-    </div>
-  </header>
-  <div class="container">
-    <article class="with-padding">
-      <header class="page-heading">
-        <h2 class="flex-center">
-          <hr class="accent behind">
-          <img inline class="page-background decorate-text left" src="src/assets/asymmetrical-floral-design-of-spirals.svg" />
-          <span class="text-script page-background"><%= title %></span>
-          <img inline class="decorate-text right page-background" src="src/assets/asymmetrical-floral-design-of-spirals.svg" />
-        </h2>
-        <nav class="navbar flex-center text-heading">
-          <a class="nav-link" href="javascript:;">Text</a>
-          <a class="nav-link" href="javascript:;">Colors</a>
-          <a class="nav-link" href="javascript:;">Fonts</a>
-        </nav>
-        <% if (description) { %>
-        <section class="lead">
-          <%= description %>
-        </section>
-        <% } %>
-      </header>
-      <hr class="accent">
-      <div id="contents">
-        <%- contents %>
+  <div class="page-background page-wrapper">
+    <header id="siteHeader">
+      <div class="site-heading-bg"></div>
+      <div class="site-heading">
+          <h1 class="text-script"><%= siteheader %></h1>
       </div>
-    </article>
-  </div>
-  <footer id="siteFooter">
-    <div class="footer-background">
+      <div class="site-banner background-image-1"></div>
       <div class="container">
-        <div class="footer-contents">
-          <header class="footer-section double text-center">
-            <img inline class="decorate-text" src="src/assets/wedding-bells.svg" />
-            <h2 class="sr-only">Footer</h2>
-            <div class="names text-script"><%= siteheader %></div>
-            <div class="event-date text-heading"><%= eventdate.format('LL') %></div>
-          </header>
-          <section class="footer-section">
-            <h3>Say hello!</h3>
-            <a class="text-large" href="javascript:;">hello@stage5clingan.com</a>
-            <h3>Share</h3>
-            <ul class="list-unstyled">
-              <% hashtags.forEach((hashtag) => { %>
-              <li class="text-large text-mono"><%= hashtag %></li>
-              <% }) %>
-            </ul>
+        <nav id="topNav" class="navbar text-heading">
+          <div class="flex-center">
+            <a class="nav-link sweep-to-bottom" href="javascript:;">About</a>
+            <a class="nav-link active" href="javascript:;">Our day</a>
+            <a class="nav-link sweep-to-bottom" href="javascript:;">Accommodations</a>
+            <a class="nav-link sweep-to-bottom" href="javascript:;">Photos</a>
+            <a class="nav-link sweep-to-bottom" href="javascript:;">Registry</a>
+            <a class="nav-link sweep-to-bottom" href="javascript:;">Updates</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <article class="with-padding">
+        <header class="page-heading">
+          <h2 class="flex-center">
+            <hr class="accent behind">
+            <img inline class="page-background decorate-text left" src="src/assets/asymmetrical-floral-design-of-spirals.svg" />
+            <span class="text-script page-background"><%= title %></span>
+            <img inline class="decorate-text right page-background" src="src/assets/asymmetrical-floral-design-of-spirals.svg" />
+          </h2>
+          <nav class="navbar flex-center text-heading">
+            <a class="nav-link" href="javascript:;">Text</a>
+            <a class="nav-link" href="javascript:;">Colors</a>
+            <a class="nav-link" href="javascript:;">Fonts</a>
+          </nav>
+          <% if (description) { %>
+          <section class="lead">
+            <%= description %>
           </section>
-          <section class="footer-section">
-            <p>
-              The engagement photos featured on this site were done by
-              <a href="javascript:;"><strong>Magnality Photography</strong></a>.
-            </p>
-            <p>
-              <small>
-                <a href="javascript:;">Attributions &amp; imprint information</a>
-              </small>
-            </p>
-            <p>
-              <small>
-                &copy;2017 Lindsay &amp; Thomas Clingan
-              </small>
-            </p>
-          </section>
+          <% } %>
+        </header>
+        <hr class="accent">
+        <div id="contents">
+          <%- contents %>
+        </div>
+      </article>
+    </div>
+    <footer id="siteFooter">
+      <div class="footer-background">
+        <div class="container">
+          <div class="footer-contents">
+            <header class="footer-section double text-center">
+              <img inline class="decorate-text" src="src/assets/wedding-bells.svg" />
+              <h2 class="sr-only">Footer</h2>
+              <div class="names text-script"><%= siteheader %></div>
+              <div class="event-date text-heading"><%= eventdate.format('LL') %></div>
+            </header>
+            <section class="footer-section">
+              <h3>Say hello!</h3>
+              <a class="text-large" href="javascript:;">hello@stage5clingan.com</a>
+              <h3>Share</h3>
+              <ul class="list-unstyled">
+                <% hashtags.forEach((hashtag) => { %>
+                <li class="text-large text-mono"><%= hashtag %></li>
+                <% }) %>
+              </ul>
+            </section>
+            <section class="footer-section">
+              <p>
+                The engagement photos featured on this site were done by
+                <a href="javascript:;"><strong>Magnality Photography</strong></a>.
+              </p>
+              <p>
+                <small>
+                  <a href="javascript:;">Attributions &amp; imprint information</a>
+                </small>
+              </p>
+              <p>
+                <small>
+                  &copy;2017 Lindsay &amp; Thomas Clingan
+                </small>
+              </p>
+            </section>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
   <script type="text/javascript">
   window.topgun = window.topgun || {}
   window.topgun.navigation = {
