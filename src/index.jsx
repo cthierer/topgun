@@ -6,6 +6,7 @@ import store from './store'
 import AppNavBar from './containers/AppNavBar'
 import App from './App'
 import { get } from './utils'
+import handleResize from './resize'
 
 import './styles/index.css'
 
@@ -13,15 +14,21 @@ import './styles/index.css'
 
 const config = window.topgun || {}
 const getConfig = get(config)
+const topNavElement = document.getElementById('topNav')
+const appElement = document.getElementById('app')
 
-if (!getConfig('navigation.disable')) {
+if (!getConfig('navigation.disable') && topNavElement) {
   render(
     <Provider store={store}><AppNavBar /></Provider>,
-    document.getElementById('topNav'),
+    topNavElement,
   )
 }
 
-render(
-  <Provider store={store}><App /></Provider>,
-  document.getElementById('app'),
-)
+if (appElement) {
+  render(
+    <Provider store={store}><App /></Provider>,
+    appElement,
+  )
+}
+
+window.addEventListener('resize', handleResize(store), false)

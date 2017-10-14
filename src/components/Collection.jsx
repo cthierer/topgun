@@ -9,6 +9,7 @@ export default function Collection({
   title,
   description,
   articles,
+  collapse,
 }) {
   const navLinks = articles.map(({ title: label, path }) => ({ label, path: `/${path}` }))
   const hasMultipleArticles = navLinks.length > 1
@@ -25,7 +26,7 @@ export default function Collection({
           </span>
           <img className="page-background decorate-text right" src={floralDesign} alt="" />
         </h2>
-        {hasMultipleArticles && <NavBar items={navLinks} />}
+        {hasMultipleArticles && <NavBar items={navLinks} menuLabel="Jump to" collapse={collapse} />}
         {/* eslint-disable react/no-danger */}
         {hasDescription && <section
           className="lead"

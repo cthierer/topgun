@@ -8,6 +8,7 @@ import createHistory from 'history/createBrowserHistory'
 import navigationReducer from './navigation/reducer'
 import contentReducer from './content/reducer'
 import metadataReducer from './metadata/reducer'
+import coreReducer from './core/reducer'
 import routesMap from './routesMap'
 
 /* global window */
@@ -45,6 +46,7 @@ const rootReducer = combineReducers({
   navigation: navigationReducer,
   content: contentReducer,
   metadata: metadataReducer,
+  core: coreReducer,
 })
 
 const middlewares = applyMiddleware(

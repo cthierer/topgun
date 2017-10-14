@@ -31,3 +31,49 @@
     }
   }
 }
+
+.navbar.collapse .nav-link {
+  display: block;
+  background-color: var(--gray-light);
+
+  &.active {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      cursor: pointer;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline !important;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: var(--color-teal);
+    color: var(--gray-light);
+  }
+
+  &:last-child {
+    border-bottom: 1px solid var(--gray-normal);
+  }
+}
+
+.navbar.collapse .nav-dropdown {
+  position: relative;
+
+  &:after {
+    content: url("data:image/svg+xml,%3C%3Fxml version='1.0' %3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg enable-background='new 0 0 32 32' height='32px' id='Слой_1' version='1.1' viewBox='0 0 32 32' width='32px' xml:space='preserve' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cpath d='M24.285,11.284L16,19.571l-8.285-8.288c-0.395-0.395-1.034-0.395-1.429,0 c-0.394,0.395-0.394,1.035,0,1.43l8.999,9.002l0,0l0,0c0.394,0.395,1.034,0.395,1.428,0l8.999-9.002 c0.394-0.395,0.394-1.036,0-1.431C25.319,10.889,24.679,10.889,24.285,11.284z' fill='%23E8E8E8' id='Expand_More'/%3E%3Cg/%3E%3Cg/%3E%3Cg/%3E%3Cg/%3E%3Cg/%3E%3Cg/%3E%3C/svg%3E");
+    position: absolute;
+    right: 10px;
+    top: 7px;
+  }
+
+  &[aria-selected="true"]:after {
+    content: url("data:image/svg+xml,%3C%3Fxml version='1.0' %3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg enable-background='new 0 0 32 32' height='32px' id='Слой_1' version='1.1' viewBox='0 0 32 32' width='32px' xml:space='preserve' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cpath d='M16.714,11.297c-0.389-0.389-1.039-0.389-1.429,0l-8.999,8.976 c-0.394,0.394-0.394,1.033,0,1.426c0.394,0.394,1.034,0.394,1.428,0L16,13.436l8.285,8.264c0.395,0.394,1.034,0.394,1.429,0 c0.394-0.394,0.394-1.033,0-1.426L16.714,11.297z' fill='%23E8E8E8' id='Expand_Less'/%3E%3Cg/%3E%3Cg/%3E%3Cg/%3E%3Cg/%3E%3Cg/%3E%3Cg/%3E%3C/svg%3E");
+  }
+}
