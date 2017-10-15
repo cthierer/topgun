@@ -2,14 +2,16 @@
 title: Hotel
 ---
 
-Lick face hiss at owner, pee a lot, and meow repeatedly scratch at fence
-purrrrrr eat muffins and poutine until owner comes back wake up wander around
-the house making large amounts of noise jump on top of your human's bed and
-fall asleep again refuse to drink water except out of someone's glass yet
-jumps off balcony gives owner dead mouse at present then poops in litter box
-snatches yarn and fights with dog cat chases laser then plays in grass finds
-tiny spot in cupboard and sleeps all day jumps in bathtub and meows when owner
-fills food dish the cat knocks over the food dish cat slides down the water
-slide and into pool and swims even though it does not like water and be a
-nyan cat, feel great about it, be annoying 24/7 poop rainbows in litter box
-all day.
+A block of rooms has been reserved at the
+[**Hilton Garden Inn**](http://hiltongardeninn3.hilton.com/en/hotels/maryland/hilton-garden-inn-frederick-IADFRGI/index.html)
+in Frederick, Maryland:
+
+> 7226 Corporate Ct <br/>
+> Frederick, MD 21703
+{text-large text-bold}
+
+To reserve a room:
+  * [Book online](http://group.hiltongardeninn.com/SouthworthClinganWedding)
+  * Call [240-566-1500](tel:+12405661500) and use the group code: **SCWM18**
+
+<iframe class="inline-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3083.994066546443!2d-77.41592478414609!3d39.379011079499286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c9da2822d6d941%3A0x53dfcbdf62a87600!2sHilton+Garden+Inn+Frederick!5e0!3m2!1sen!2sus!4v1508026472541" frameborder="0" allowfullscreen></iframe>

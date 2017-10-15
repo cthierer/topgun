@@ -8,6 +8,7 @@ export default function Article({
   slug,
   contents,
   collection,
+  skipBackToTop,
   hideTitle = false,
 }) {
   const collectionPath = `/${collection}`
@@ -17,11 +18,13 @@ export default function Article({
       {/* eslint-disable react/no-danger */}
       <div dangerouslySetInnerHTML={wrapMarkup(contents)} />
       {/* eslint-disable react/no-danger */}
-      <div className="back-to-top">
-        {/* eslint-disable jsx-a11y/anchor-is-valid */}
-        <Link to={collectionPath}>Back to top</Link>
-        {/* eslint-enable jsx-a11y/anchor-is-valid */}
-      </div>
+      {!skipBackToTop &&
+        <div className="back-to-top">
+          {/* eslint-disable jsx-a11y/anchor-is-valid */}
+          <Link to={collectionPath}>Back to top</Link>
+          {/* eslint-enable jsx-a11y/anchor-is-valid */}
+        </div>
+      }
       <hr />
     </section>
   )

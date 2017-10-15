@@ -72,6 +72,11 @@ Metalsmith(__dirname)
     'our-day': {
       pattern: 'our-day/**/*.md',
       metadata: 'content/our-day/_collection.yml',
+      sortBy: 'order',
+    },
+    registry: {
+      pattern: 'registry/**/*.md',
+      metadata: 'content/registry/_collection.yml',
     },
   }))
   .use(markdown)

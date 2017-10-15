@@ -26,13 +26,13 @@ export default function Collection({
           </span>
           <img className="page-background decorate-text right" src={floralDesign} alt="" />
         </h2>
-        {hasMultipleArticles && <NavBar items={navLinks} menuLabel="Jump to" collapse={collapse} />}
         {/* eslint-disable react/no-danger */}
         {hasDescription && <section
           className="lead"
           dangerouslySetInnerHTML={wrapMarkup(description)}
         />}
         {/* eslint-enable react/no-danger */}
+        {hasMultipleArticles && <NavBar items={navLinks} menuLabel="Jump to" collapse={collapse} />}
       </header>
       {(hasMultipleArticles || hasDescription) && <hr className="accent" />}
       <div id="contents" className={hasMultipleArticles ? 'articles' : 'single'}>

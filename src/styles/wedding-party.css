@@ -1,0 +1,35 @@
+
+.wedding-party {
+  & .person {
+    margin-bottom: 1.5em;
+    position: relative;
+
+    & img {
+      width: 100%;
+      max-width: 300px;
+      border: 1px solid var(--gray-light);
+    }
+
+    & .label {
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: 700;
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    & {
+      lost-utility: clearfix;
+
+      & .person {
+        lost-column: 1/4;
+
+        & .label {
+          font-size: 1.1em;
+          line-height: 1.1em;
+        }
+      }
+    }
+  }
+}

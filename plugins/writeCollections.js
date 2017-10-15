@@ -35,6 +35,7 @@ module.exports = function init({
           contents,
           description = '',
           path: filePath,
+          skipBackToTop,
         }) => ({
           title,
           contents: Buffer.isBuffer(contents)
@@ -46,6 +47,7 @@ module.exports = function init({
           path: getPath(permalink, filePath),
           slug: getFileName(filePath),
           collection: name,
+          skipBackToTop,
         }))
         const contentsObj = {
           ...metadata,
