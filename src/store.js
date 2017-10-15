@@ -9,6 +9,7 @@ import navigationReducer from './navigation/reducer'
 import contentReducer from './content/reducer'
 import metadataReducer from './metadata/reducer'
 import coreReducer from './core/reducer'
+import galleryReducer from './gallery/reducer'
 import routesMap from './routesMap'
 import { getRandom } from './utils'
 
@@ -72,6 +73,7 @@ const rootReducer = combineReducers({
   content: contentReducer,
   metadata: metadataReducer,
   core: coreReducer,
+  gallery: galleryReducer,
 })
 
 const middlewares = applyMiddleware(

@@ -11,3 +11,6 @@ optimize-images:
 
 analyze-bundle:
 	@./node_modules/.bin/webpack --config webpack.production.js --json | ./node_modules/.bin/webpack-bundle-size-analyzer
+
+thumbnails:
+	./node_modules/.bin/thumb ./albums/engagement ./albums/engagement

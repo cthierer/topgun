@@ -58,6 +58,7 @@ typings/
 .env
 
 # custom
+albums
 dist
 public
 .DS_Store

@@ -1,9 +1,7 @@
 
 import React from 'react'
 import Article from './Article'
-import NavBar from './NavBar'
-import { wrapMarkup } from '../utils'
-import floralDesign from '../assets/asymmetrical-floral-design-of-spirals.svg'
+import PageHeader from './PageHeader'
 
 export default function Collection({
   title,
@@ -17,23 +15,7 @@ export default function Collection({
 
   return (
     <article className="with-padding">
-      <header className="page-heading">
-        <h2 className="flex-center">
-          <hr className="accent behind" />
-          <img className="page-background decorate-text left" src={floralDesign} alt="" />
-          <span className="text-script page-background section-title">
-            {title}
-          </span>
-          <img className="page-background decorate-text right" src={floralDesign} alt="" />
-        </h2>
-        {/* eslint-disable react/no-danger */}
-        {hasDescription && <section
-          className="lead"
-          dangerouslySetInnerHTML={wrapMarkup(description)}
-        />}
-        {/* eslint-enable react/no-danger */}
-        {hasMultipleArticles && <NavBar items={navLinks} menuLabel="Jump to" collapse={collapse} />}
-      </header>
+      <PageHeader title={title} description={description} navLinks={navLinks} collapse={collapse} />
       {(hasMultipleArticles || hasDescription) && <hr className="accent" />}
       <div id="contents" className={hasMultipleArticles ? 'articles' : 'single'}>
         {articles.map(article => (

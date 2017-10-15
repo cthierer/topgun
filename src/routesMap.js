@@ -2,6 +2,7 @@
 import { NOT_FOUND, redirect } from 'redux-first-router'
 import loadCollection from './content/actions/loadCollection'
 import updateMetadata from './metadata/actions/updateMetadata'
+import fetchGalleries from './gallery/actions/fetchGalleries'
 
 const aliases = new Map([])
 
@@ -14,6 +15,15 @@ export default {
         collection: 'about',
       },
     })),
+  },
+  ROUTE_TO_GALLERIES: {
+    path: '/photos/:gallery?',
+    thunk: async (dispatch) => {
+      dispatch(fetchGalleries())
+      dispatch(updateMetadata({
+        title: 'Photos',
+      }))
+    },
   },
   ROUTE_TO_SECTION: {
     path: '/:collection/:page?',

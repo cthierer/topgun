@@ -2,6 +2,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import ContentCollection from './containers/ContentCollection'
+import PhotoGalleries from './containers/PhotoGalleries'
 
 /* global document */
 
@@ -14,6 +15,8 @@ function App({
   switch (route) {
     case 'ROUTE_TO_SECTION':
       return <ContentCollection />
+    case 'ROUTE_TO_GALLERIES':
+      return <PhotoGalleries />
     default:
       return <div>Not found</div>
   }
