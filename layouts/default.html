@@ -3,6 +3,12 @@
 <head>
   <title><%= title %></title>
   <meta name="viewport" content="width=device-width initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#f8f8f8">
   <% inject.styles.forEach((href) => { %>
   <link rel="stylesheet" type="text/css" href="<%= href %>">
   <% }) %>
@@ -32,7 +38,7 @@
             </header>
             <section class="footer-section">
               <h3>Say hello!</h3>
-              <a href="javascript:;">hello@stage5clingan.com</a>
+              <a href="mailto:hello@stage5clingan.com">hello@stage5clingan.com</a>
               <h3>Share</h3>
               <ul class="list-unstyled">
                 <% hashtags.forEach((hashtag) => { %>
@@ -43,13 +49,17 @@
             <section class="footer-section">
               <p>
                 The engagement photos featured on this site were done by
-                <a href="javascript:;"><strong>Magnality Photography</strong></a>.
+                <a href="http://magnalityphotography.com/">
+                  <strong>Magnality Photography</strong>
+                </a>.
               </p>
+              <!--
               <p>
                 <small>
                   <a href="javascript:;">Attributions &amp; imprint information</a>
                 </small>
               </p>
+              -->
               <p>
                 <small>
                   &copy;2017 Lindsay &amp; Thomas Clingan
