@@ -3,7 +3,7 @@ import fetch from 'isomorphic-fetch'
 
 export const FETCHED_GALLERIES = 'FETCHED_GALLERIES'
 
-export default function fetchGalleries(url = 'http://cdn.stage5clingan.com/galleries.json') {
+export default function fetchGalleries(url = 'https://cdn.stage5clingan.com/galleries.json') {
   return async (dispatch) => {
     const response = await fetch(url)
 
