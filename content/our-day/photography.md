@@ -3,11 +3,14 @@ title: A Note on Photography
 order: 2
 ---
 
-Give attitude throwup on your pillow mesmerizing birds for chase laser so cats
-go for world domination and meow for food, then when human fills food dish,
-take a few bites of food and continue meowing. Climb leg. Meow sit in box climb
-a tree, wait for a fireman jump to fireman then scratch his face. Sleep nap
-chirp at birds, so hiss at vacuum cleaner but plop down in the middle where
-everybody walks wake up human for food at 4am or lick the plastic bag for kitty
-poochy. Chase the pig around the house fall over dead (not really but gets
-sypathy).
+Out of respect for the ceremony, please do not take photos during the ceremony
+or during the photographer’s session with the wedding party immediately
+following the ceremony.
+{text-large}
+
+Nothing ruins a wedding photo like someone leaning out in the aisle to take a
+picture with their cell phone or camera. All professional photos taken by our
+photographer will be available after the wedding. Photos will be uploaded to
+our website, unwatermarked and in full resolution. Please feel free to download
+them at that time. We encourage you to take photos during the reception and
+post them to our website for everyone to see!
