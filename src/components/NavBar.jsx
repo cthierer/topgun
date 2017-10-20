@@ -4,6 +4,32 @@ import { NavLink } from 'redux-first-router-link'
 import { Accordion, AccordionItem, AccordionItemTitle, AccordionItemBody } from 'react-accessible-accordion'
 import 'react-accessible-accordion/dist/react-accessible-accordion.css'
 
+function generateLinks(links) {
+  return links.map(({
+    label,
+    path,
+    href,
+    target,
+  }) => {
+    if (href) {
+      return <a className="nav-link sweep-to-bottom" href={href} target={target}>{label}</a>
+    }
+    return (
+      <NavLink
+        className="nav-link sweep-to-bottom"
+        to={path}
+        key={path}
+        activeClassName="active"
+        onClick={(e) => {
+          e.target.blur()
+        }}
+      >
+        {label}
+      </NavLink>
+    )
+  })
+}
+
 function NavBar({
   items,
   currPath,
@@ -14,7 +40,10 @@ function NavBar({
     const {
       label: title = menuLabel,
     } = items.find(({ path }) => currPath && currPath.startsWith(path)) || {}
-    const showItems = items.filter(({ path }) => !currPath || !currPath.startsWith(path))
+    const links = generateLinks([
+      ...items.filter(({ path }) => !currPath || !currPath.startsWith(path)),
+      ...items.filter(({ href }) => !!href),
+    ])
 
     return (
       <nav className="navbar text-heading collapse">
@@ -24,20 +53,7 @@ function NavBar({
               {title}
             </AccordionItemTitle>
             <AccordionItemBody>
-              {showItems.map(({ label, path }) => (
-                // eslint-disable-next-line jsx-a11y/anchor-is-valid
-                <NavLink
-                  className="nav-link sweep-to-bottom"
-                  to={path}
-                  key={path}
-                  activeClassName="active"
-                  onClick={(e) => {
-                    e.target.blur()
-                  }}
-                >
-                  {label}
-                </NavLink>
-              ))}
+              {links}
             </AccordionItemBody>
           </AccordionItem>
         </Accordion>
@@ -45,22 +61,11 @@ function NavBar({
     )
   }
 
+  const links = generateLinks(items)
+
   return (
     <nav className="navbar flex-center text-heading">
-      {items.map(({ label, path }) => (
-        // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <NavLink
-          className="nav-link sweep-to-bottom"
-          to={path}
-          key={path}
-          activeClassName="active"
-          onClick={(e) => {
-            e.target.blur()
-          }}
-        >
-          {label}
-        </NavLink>
-      ))}
+      {links}
     </nav>
   )
 }
