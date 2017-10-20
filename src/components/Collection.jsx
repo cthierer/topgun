@@ -12,10 +12,18 @@ export default function Collection({
   const navLinks = articles.map(({ title: label, path }) => ({ label, path: `/${path}` }))
   const hasMultipleArticles = navLinks.length > 1
   const hasDescription = !!description
+  const pageTitle = articles.length === 1
+    ? articles[0].title
+    : title
 
   return (
     <article className="with-padding">
-      <PageHeader title={title} description={description} navLinks={navLinks} collapse={collapse} />
+      <PageHeader
+        title={pageTitle}
+        description={description}
+        navLinks={navLinks}
+        collapse={collapse}
+      />
       {(hasMultipleArticles || hasDescription) && <hr className="accent" />}
       <div id="contents" className={hasMultipleArticles ? 'articles' : 'single'}>
         {articles.map(article => (

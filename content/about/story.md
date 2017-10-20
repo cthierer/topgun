@@ -1,5 +1,5 @@
 ---
-title: Our story
+title: Our Story
 ---
 
 After twelve and half years of dating we finally have a date set for our
@@ -17,7 +17,7 @@ acknowledged our feelings for one another and became boyfriend and girlfriend.
 We weren’t “Facebook official” because at the time Facebook was reserved for
 college students only, but we felt our relationship was off to a good start.
 
-![Tom & Lindsay](216934_1014524403109_9430_n.jpg)
+![Tom & Lindsay](/about/216934_1014524403109_9430_n.jpg)
 {pull-right snapshot rotate}
 
 Lindsay would spend the next four years at Salisbury University and Tom would
@@ -47,5 +47,5 @@ another but the only thing that will change about our relationship is our tax
 status. We will continue to love and support each other, put the other’s needs
 above our own, and approach each day as a team.
 
-![Tom & Lindsay](21728516_10212247919571565_5485824495124986713_n.jpg)
+![Tom & Lindsay](/about/21728516_10212247919571565_5485824495124986713_n.jpg)
 {snapshot text-center bigger}

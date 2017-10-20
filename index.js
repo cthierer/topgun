@@ -51,6 +51,7 @@ Metalsmith(__dirname)
   ]))
   .use(publish({
     draft: env !== 'production',
+    develop: env === 'development',
   }))
   .use(metadata({
     navigation: '_data/navigation.yml',

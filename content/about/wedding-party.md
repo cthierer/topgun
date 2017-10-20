@@ -1,5 +1,6 @@
 ---
 title: Wedding party
+publish: draft
 ---
 
 #### Bridal party

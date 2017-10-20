@@ -1,7 +1,7 @@
 ---
 title: Styles
 layout: static.html
-publish: draft
+publish: develop
 description: Overview of styles, fonts, and colors used on the site.
 ---
 
