@@ -16,6 +16,14 @@
   font-weight: 700;
 }
 
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
 .lead {
   text-align: center;
   margin-bottom: 2em;
@@ -140,5 +148,60 @@ blockquote {
   &:focus,
   &:active {
     color: var(--color-text);
+  }
+}
+
+.snapshot {
+  padding: 8px;
+  background-color: #fff;
+  border: 1px solid var(--gray-light);
+  box-shadow: 0 0 6px 2px var(--gray-normal);
+  line-height: 1em;
+  margin-top: 0;
+  width: 100%;
+
+  &.pull-right,
+  &.pull-left {
+    float: none;
+  }
+
+  & > img {
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    & {
+      width: 40%;
+      margin-top: 1em;
+    }
+
+    &.bigger {
+      width: 60%;
+    }
+
+    &.pull-right {
+      float: right;
+      margin-left: 1em;
+    }
+
+    &.rotate,
+    &.pull-right.rotate {
+      transform: rotate(3deg);
+    }
+
+    &.pull-left {
+      float: left;
+      margin-right: 1em;
+    }
+
+    &.pull-left.rotate {
+      transform: rotate(-3deg);
+    }
+
+    &.text-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }
