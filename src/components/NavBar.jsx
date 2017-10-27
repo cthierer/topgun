@@ -41,7 +41,7 @@ function NavBar({
       label: title = menuLabel,
     } = items.find(({ path }) => currPath && currPath.startsWith(path)) || {}
     const links = generateLinks([
-      ...items.filter(({ path }) => !currPath || !currPath.startsWith(path)),
+      ...items.filter(({ path }) => !currPath || (path && !currPath.startsWith(path))),
       ...items.filter(({ href }) => !!href),
     ])
 
