@@ -10,3 +10,5 @@ export const get = curry((
 export const wrapMarkup = markup => ({ __html: markup })
 
 export const getRandom = max => Math.floor(Math.random() * max)
+
+export const sleep = async length => new Promise(resolve => setTimeout(resolve, length))

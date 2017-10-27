@@ -9,14 +9,15 @@ import PhotoGalleries from './containers/PhotoGalleries'
 function App({
   route,
   title,
+  loading,
 }) {
   document.title = title
 
   switch (route) {
     case 'ROUTE_TO_SECTION':
-      return <ContentCollection />
+      return <div className={`fade ${loading ? 'loading' : 'loaded'}`}><ContentCollection /></div>
     case 'ROUTE_TO_GALLERIES':
-      return <PhotoGalleries />
+      return <div className={`fade ${loading ? 'loading' : 'loaded'}`}><PhotoGalleries /></div>
     default:
       return <div>Not found</div>
   }
@@ -25,6 +26,7 @@ function App({
 const mapStateToProps = state => ({
   route: state.location.type,
   title: state.metadata.title,
+  loading: state.core.loading,
 })
 
 export default connect(mapStateToProps)(App)

@@ -20,6 +20,7 @@ export default function Banner({
   src,
   size = 'cover',
   position = 'center',
+  loading = true,
 }) {
   if (src) {
     const getSrc = getAttrForScreen(src)
@@ -27,7 +28,7 @@ export default function Banner({
     const getPosition = getAttrForScreen(position)
 
     return (
-      <div className="site-banner-wrapper">
+      <div className={`site-banner-wrapper ${loading ? 'loading' : 'loaded'}`}>
         <div className="site-banner outer" />
         <div className="site-banner inner">
           <div className="inner-shadow" />

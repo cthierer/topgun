@@ -9,6 +9,7 @@ import navigationReducer from './navigation/reducer'
 import contentReducer from './content/reducer'
 import metadataReducer from './metadata/reducer'
 import coreReducer from './core/reducer'
+import toggleRouting from './core/actions/toggleRouting'
 import galleryReducer from './gallery/reducer'
 import routesMap from './routesMap'
 import { getRandom } from './utils'
@@ -52,6 +53,8 @@ const {
       },
     },
   ) => {
+    dispatch(toggleRouting(true))
+
     if (type === NOT_FOUND) {
       dispatch(redirect({ type: 'ROUTE_TO_LANDING' }))
       return
@@ -65,6 +68,7 @@ const {
       dispatch(setBanner(banner))
     }
   },
+  onAfterChange: dispatch => dispatch(toggleRouting(false)),
 })
 
 const rootReducer = combineReducers({

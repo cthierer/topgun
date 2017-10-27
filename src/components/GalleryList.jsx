@@ -19,7 +19,7 @@ export default function GalleryList({
   }))
 
   return (
-    <div>
+    <div className="with-padding">
       <PageHeader
         title="Photos"
         navLinks={navLinks}

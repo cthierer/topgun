@@ -1,5 +1,6 @@
 
-const fetch = require('isomorphic-fetch')
+import fetch from 'isomorphic-fetch'
+import toggleLoading from '../../core/actions/toggleLoading'
 
 const cache = new Map()
 
@@ -18,6 +19,8 @@ async function fetchCollection(collection) {
 
 export default function loadCollection(collection) {
   return async (dispatch) => {
+    await dispatch(toggleLoading(true))
+
     if (!cache.has(collection)) {
       cache.set(collection, fetchCollection(collection))
     }
@@ -34,7 +37,8 @@ export default function loadCollection(collection) {
       dispatch({
         type: NO_COLLECTION_FOUND,
       })
+    } finally {
+      dispatch(toggleLoading(false))
     }
   }
 }
-
