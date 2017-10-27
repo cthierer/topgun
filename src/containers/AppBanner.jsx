@@ -5,8 +5,8 @@ import { get } from '../utils'
 
 const mapStateToProps = state => ({
   src: get(state, 'core.banner.src', '/assets/banners/24.jpg'),
-  position: get(state, 'core.banner.size', 'center'),
-  size: get(state, 'core.banner.cover', 'cover'),
+  position: get(state, 'core.banner.position', 'center'),
+  size: get(state, 'core.banner.size', 'cover'),
 })
 
 export default connect(mapStateToProps)(Banner)

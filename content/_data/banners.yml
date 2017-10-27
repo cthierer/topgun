@@ -1,18 +1,33 @@
 - route: '^/about(/.*)?$'
   images:
     - src: '/assets/banners/25.jpg'
+      size:
+        1199: cover
+        1200: 1200px
 - route: '^/our-day(/.*)?$'
   images:
     - src: '/assets/banners/1.jpg'
+      size:
+        1199: cover
+        1200: 1200px
 - route: '^/accommodations(/.*)?$'
   images:
     - src: '/assets/banners/12.jpg'
+      size:
+        1199: cover
+        1200: 1200px
 - route: '^/photos(/.*)?$'
   images:
     - src: '/assets/banners/17.jpg'
+      size:
+        1199: cover
+        1200: 1200px
 - route: '^/registry(/.*)?$'
   images:
     - src: '/assets/banners/10.jpg'
+      size:
+        1199: cover
+        1200: 1200px
 - route: '^/.*$'
   images:
     - src: '/assets/banners/4.jpg'
