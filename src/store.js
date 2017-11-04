@@ -9,14 +9,11 @@ import navigationReducer from './navigation/reducer'
 import contentReducer from './content/reducer'
 import metadataReducer from './metadata/reducer'
 import coreReducer from './core/reducer'
-import toggleRouting from './core/actions/toggleRouting'
+import changeBanner from './core/actions/changeBanner'
 import galleryReducer from './gallery/reducer'
 import routesMap from './routesMap'
-import { getRandom } from './utils'
 
 /* global window */
-
-import setBanner from './core/actions/setBanner'
 
 const global = window || {}
 const { topgun = {} } = global
@@ -47,28 +44,25 @@ const {
         type,
         meta: {
           location: {
-            current: { pathname },
+            current: {
+              pathname,
+              payload: {
+                collection: nextCollection,
+              } = {},
+            },
+            prev: {
+              payload: {
+                collection: prevCollection,
+              } = {},
+            },
           },
         },
       },
     },
   ) => {
-    dispatch(toggleRouting(true))
-
-    if (type === NOT_FOUND) {
-      dispatch(redirect({ type: 'ROUTE_TO_LANDING' }))
-      return
-    }
-
-    const { core: { banners = [] } = {} } = getState()
-    const { images: possibleBanners } = banners.find(({ route }) => pathname.match(route) !== null)
-    const banner = possibleBanners[getRandom(possibleBanners.length)]
-
-    if (banner) {
-      dispatch(setBanner(banner))
-    }
+    if (type === NOT_FOUND) dispatch(redirect({ type: 'ROUTE_TO_LANDING' }))
+    if (nextCollection !== prevCollection) dispatch(changeBanner(pathname))
   },
-  onAfterChange: dispatch => dispatch(toggleRouting(false)),
 })
 
 const rootReducer = combineReducers({

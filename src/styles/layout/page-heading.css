@@ -59,6 +59,10 @@
     }
   }
 
+  & .navbar {
+    margin-top: 18px;
+  }
+
   & .navbar .nav-link {
     margin-left: 16px;
     margin-right: 16px;

@@ -1,6 +1,6 @@
 ---
 title: Venue & Directions
-order: 1
+order: 2
 ---
 
 The ceremony and reception will be at

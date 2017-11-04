@@ -8,24 +8,24 @@
        url('../fonts/great-vibes-v4-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
-/* pt-serif-regular - latin */
+/* lora-regular - latin */
 @font-face {
-  font-family: 'PT Serif';
+  font-family: 'Lora';
   font-style: normal;
   font-weight: 400;
-  src: local('PT Serif'), local('PTSerif-Regular'),
-       url('../fonts/pt-serif-v8-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('../fonts/pt-serif-v8-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: local('Lora Regular'), local('Lora-Regular'),
+       url('../fonts/lora-v11-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/lora-v11-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
-/* pt-serif-700 - latin */
+/* lora-700 - latin */
 @font-face {
-  font-family: 'PT Serif';
+  font-family: 'Lora';
   font-style: normal;
   font-weight: 700;
-  src: local('PT Serif Bold'), local('PTSerif-Bold'),
-       url('../fonts/pt-serif-v8-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('../fonts/pt-serif-v8-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: local('Lora Bold'), local('Lora-Bold'),
+       url('../fonts/lora-v11-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/lora-v11-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* raleway-regular - latin */

@@ -41,11 +41,43 @@
 }
 
 #contents {
-  font-size: 1.1em;
+  font-size: 1.25rem;
   line-height: 1.5em;
 
   & .text-large {
-    line-height: 1.5em;
+    font-size: 1.4rem;
+    line-height: 1.6em;
+
+    @media (min-width: 576px) {
+      & {
+        font-size: 1.5rem;
+        line-height: 1.75em;
+      }
+    }
+  }
+
+  & .text-xlarge {
+    font-size: 1.75rem;
+    line-height: 1.25em;
+
+    @media (min-width: 576px) {
+      & {
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  & p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    &:first-child {
+      margin-top: 1em;
+    }
+
+    &:last-child {
+      margin-bottom: 1em;
+    }
   }
 
   &.articles > section {
@@ -53,15 +85,22 @@
   }
 
   & h3 {
-    font-size: 1.75em;
+    font-size: 1.75rem;
+    line-height: 1.25em;
     text-transform: uppercase;
     text-align: center;
     font-weight: 400;
     margin-top: 0;
+
+    @media (min-width: 576px) {
+      & {
+        font-size: 2.5rem;
+      }
+    }
   }
 
   & h4 {
-    font-size: 1.25em;
+    font-size: 1.5rem;
     text-transform: uppercase;
   }
 
@@ -73,7 +112,7 @@
     & a {
       font-family: 'Raleway', sans-serif;
       font-weight: 700;
-      font-size: .8em;
+      font-size: 1rem;
     }
   }
 }
@@ -100,6 +139,10 @@ hr {
 
 blockquote {
   margin-left: 0;
+
+  & p {
+    line-height: 1.25em;
+  }
 }
 
 .inline-map {
@@ -108,6 +151,13 @@ blockquote {
   margin-right: auto;
   display: block;
   border: 1px solid var(--gray-light);
+
+  padding: 8px;
+  background-color: #fff;
+  border: 1px solid var(--gray-light);
+  box-shadow: 0 0 6px 2px var(--gray-normal);
+  line-height: 1em;
+
   width: 270px;
   height: 320px;
 
@@ -156,7 +206,7 @@ blockquote {
   box-shadow: 0 0 6px 2px var(--gray-normal);
   line-height: 1em;
   margin-top: 0;
-  width: 100%;
+  width: calc(100% - 16px);
 
   &.pull-right,
   &.pull-left {
@@ -201,14 +251,5 @@ blockquote {
       margin-left: auto;
       margin-right: auto;
     }
-  }
-}
-
-.fade {
-  transition: opacity 250ms;
-  opacity: 1;
-
-  &.loading {
-    opacity: 0;
   }
 }

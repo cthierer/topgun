@@ -1,6 +1,6 @@
 
 import fetch from 'isomorphic-fetch'
-import toggleLoading from '../../core/actions/toggleLoading'
+import toggleLoading from './toggleLoading'
 
 export const FETCHED_GALLERIES = 'FETCHED_GALLERIES'
 

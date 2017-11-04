@@ -1,6 +1,6 @@
 ---
 title: A Note on Photography
-order: 2
+order: 3
 ---
 
 Out of respect for the ceremony, please do not take photos during the ceremony

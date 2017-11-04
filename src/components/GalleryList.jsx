@@ -11,6 +11,7 @@ const description = `<p>
 export default function GalleryList({
   galleries,
   screenWidth,
+  loading,
 }) {
   const collapse = screenWidth < 768
   const navLinks = galleries.map(({ title, slug }) => ({
@@ -19,7 +20,7 @@ export default function GalleryList({
   }))
 
   return (
-    <div className="with-padding">
+    <div className={`animated with-padding ${loading ? 'loading fadeOutDown' : 'loaded fadeInUp'}`}>
       <PageHeader
         title="Photos"
         navLinks={navLinks}
