@@ -65,6 +65,13 @@ const {
       dispatch(changeBanner(pathname))
     }
   },
+  onAfterChange: (dispatch, getState) => {
+    const { location: { pathname } = {} } = getState()
+    if (window.ga && pathname) {
+      window.ga('set', 'page', pathname)
+      window.ga('send', 'pageview')
+    }
+  },
 })
 
 const rootReducer = combineReducers({
