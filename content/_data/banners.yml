@@ -62,6 +62,18 @@
 - route: '^/.*$'
   images:
     - src: '/assets/banners/4.jpg'
+      size:
+        1199: cover
+        1200: 1200px
     - src: '/assets/banners/8.jpg'
+      size:
+        1199: cover
+        1200: 1200px
     - src: '/assets/banners/15.jpg'
+      size:
+        1199: cover
+        1200: 1200px
     - src: '/assets/banners/18.jpg'
+      size:
+        1199: cover
+        1200: 1200px

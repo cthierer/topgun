@@ -1,6 +1,7 @@
 
 import { NOT_FOUND, redirect } from 'redux-first-router'
 import loadCollection from './content/actions/loadCollection'
+import loadPage from './content/actions/loadPage'
 import updateMetadata from './metadata/actions/updateMetadata'
 import fetchGalleries from './gallery/actions/fetchGalleries'
 
@@ -22,6 +23,28 @@ export default {
       dispatch(updateMetadata({
         title: 'Photos',
       }))
+    },
+  },
+  ROUTE_TO_PAGE: {
+    path: '/page/:slug',
+    thunk: async (dispatch, getState) => {
+      const {
+        location: { payload: { slug } = {} } = {},
+      } = getState()
+
+      await dispatch(loadPage(slug))
+
+      const {
+        content: { page: loaded } = {},
+      } = getState()
+
+      if (!loaded) {
+        dispatch(redirect({ type: NOT_FOUND }))
+        return
+      }
+
+      const { title } = loaded
+      dispatch(updateMetadata({ title }))
     },
   },
   ROUTE_TO_SECTION: {

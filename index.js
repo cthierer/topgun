@@ -15,6 +15,7 @@ const chalk = require('chalk')
 const moment = require('moment')
 const webpack = require('./plugins/webpack')
 const writeCollections = require('./plugins/writeCollections')
+const toJSON = require('./plugins/toJSON')
 
 const env = process.env.NODE_ENV === 'production' ? 'production' : 'develop'
 const webpackConfig = require(`./webpack.${env}.js`) // eslint-disable-line import/no-dynamic-require
@@ -81,6 +82,7 @@ Metalsmith(__dirname)
     },
   }))
   .use(markdown)
+  .use(toJSON())
   .use(permalinks())
   .use(writeCollections({
     prettyPrint: process.env.NODE_ENV !== 'production',

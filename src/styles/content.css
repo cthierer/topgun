@@ -253,3 +253,7 @@ blockquote {
     }
   }
 }
+
+.icon-sm {
+  width: 100px;
+}
