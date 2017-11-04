@@ -9,12 +9,11 @@ const aliases = new Map([])
 export default {
   ROUTE_TO_LANDING: {
     path: '/',
-    thunk: dispatch => dispatch(redirect({
-      type: 'ROUTE_TO_SECTION',
-      payload: {
-        collection: 'about',
-      },
-    })),
+    thunk: async (dispatch) => {
+      dispatch(updateMetadata({
+        title: 'Lindsay & Thomas\'s Wedding',
+      }))
+    },
   },
   ROUTE_TO_GALLERIES: {
     path: '/photos/:gallery?',

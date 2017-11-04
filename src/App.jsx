@@ -13,6 +13,8 @@ function App({
   document.title = title
 
   switch (route) {
+    case 'ROUTE_TO_LANDING':
+      return <div className="offset-footer" />
     case 'ROUTE_TO_SECTION':
       return <ContentCollection />
     case 'ROUTE_TO_GALLERIES':

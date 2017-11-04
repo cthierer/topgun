@@ -2,6 +2,8 @@
 import React from 'react'
 import curry from 'lodash.curry'
 
+/* global document */
+
 const getAttrForScreen = curry((attr, width) => {
   if (typeof attr === 'string') {
     return attr
@@ -10,7 +12,15 @@ const getAttrForScreen = curry((attr, width) => {
   const widths = Object
     .keys(attr)
     .map(val => Number.parseInt(val, 10))
-    .sort()
+    .sort((a, b) => {
+      if (a < b) {
+        return -1
+      }
+      if (a > b) {
+        return 1
+      }
+      return 0
+    })
 
   const cutoff = widths.find(val => width <= val) || widths[0]
   return attr[cutoff]
@@ -21,15 +31,24 @@ export default function Banner({
   size = 'cover',
   position = 'center',
   loading = true,
+  caption,
+  fillPage,
 }) {
   const getSrc = getAttrForScreen(src)
   const getSize = getAttrForScreen(size)
   const getPosition = getAttrForScreen(position)
 
+  const topNavHeight = document.getElementById('topNav').clientHeight || 0
+  const height = fillPage ? `calc(100vh - ${topNavHeight}px)` : undefined
+
   return (
-    <div className={`site-banner-wrapper animated ${loading ? 'loading fadeOut' : 'loaded fadeIn'}`}>
+    <div
+      className={`site-banner-wrapper animated ${loading ? 'loading fadeOut' : 'loaded fadeIn'}`}
+      style={{ height }}
+    >
       <div className="site-banner outer" />
       <div className="site-banner inner">
+        {caption && <div className="caption text-heading">{caption}</div>}
         <div className="inner-shadow" />
       </div>
       { /* eslint-disable react/jsx-closing-tag-location */ }

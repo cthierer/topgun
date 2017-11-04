@@ -7,11 +7,14 @@ export default pathname => async (dispatch, getState) => {
   await dispatch(toggleLoading(true))
 
   const { core: { banners = [] } = {} } = getState()
-  const { images: possibleBanners } = banners.find(({ route }) => pathname.match(route) !== null)
+  const {
+    images: possibleBanners,
+    ...attrs
+  } = banners.find(({ route }) => pathname.match(route) !== null)
   const banner = possibleBanners[getRandom(possibleBanners.length)]
 
   if (banner) {
-    dispatch(setBanner(banner))
+    dispatch(setBanner(banner, attrs))
   }
 
   dispatch(toggleLoading(false))

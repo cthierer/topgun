@@ -1,6 +1,17 @@
-- route: '^/about(/.*)?$'
+- route: '^/$'
+  fillPage: true
+  caption: May 12, 2018
   images:
     - src: '/assets/banners/25.jpg'
+      position:
+        575: 20%
+        576: center
+        768: center
+        992: center
+        1200: center
+- route: '^/about(/.*)?$'
+  images:
+    - src: '/assets/banners/6.jpg'
       size:
         1199: cover
         1200: 1200px

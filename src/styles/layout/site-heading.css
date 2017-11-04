@@ -38,13 +38,11 @@
 }
 
 .site-banner-wrapper {
-  overflow: hidden;
-}
-
-#banner {
+  transition: height 1s ease-in-out;
   height: 370px;
   position: relative;
   margin-top: -76px;
+  overflow: hidden;
 
   @media (min-width: 768px) {
     & {
@@ -61,7 +59,7 @@
 
 .site-banner {
   width: 100%;
-  height: 370px;
+  height: inherit;
   position: absolute;
   top: 0;
   z-index: -1;
@@ -76,18 +74,6 @@
     filter: blur(5px);
   }
 
-  @media (min-width: 768px) {
-    & {
-      height: 550px;
-    }
-  }
-
-  @media (min-width: 1200px) {
-    & {
-      height: 650px;
-    }
-  }
-
   & .inner-shadow {
     position: absolute;
     bottom: 0;
@@ -95,5 +81,24 @@
     height: 1px;
     width: 100%;
     box-shadow: 0 -5px 10px var(--gray-dark);
+  }
+
+  & .caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    color: var(--gray-light);
+    font-weight: 400;
+    text-transform: lowercase;
+    padding-bottom: 4px;
+
+    @media (min-width: 768px) {
+      & {
+        font-size: 2.5em;
+        padding-bottom: 16px;
+      }
+    }
   }
 }

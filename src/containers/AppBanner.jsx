@@ -12,6 +12,8 @@ const mapStateToProps = (state) => {
     position: get(state, 'core.banner.position', 'center'),
     size: get(state, 'core.banner.size', 'cover'),
     loading: get(state, 'core.loading'),
+    fillPage: get(state, 'core.banner.fillPage', false),
+    caption: get(state, 'core.banner.caption'),
   }
 }
 

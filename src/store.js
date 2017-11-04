@@ -61,7 +61,9 @@ const {
     },
   ) => {
     if (type === NOT_FOUND) dispatch(redirect({ type: 'ROUTE_TO_LANDING' }))
-    if (nextCollection !== prevCollection) dispatch(changeBanner(pathname))
+    if (nextCollection !== prevCollection || nextCollection === undefined) {
+      dispatch(changeBanner(pathname))
+    }
   },
 })
 
