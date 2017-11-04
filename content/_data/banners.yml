@@ -2,34 +2,54 @@
   fillPage: true
   caption: May 12, 2018
   images:
-    - src: '/assets/banners/25.jpg'
+    - src:
+        576: '/assets/banners/25_768.jpg'
+        768: '/assets/banners/25_992.jpg'
+        992: '/assets/banners/25.jpg'
+        1200: '/assets/banners/25.jpg'
       position:
         575: 20%
-        576: center
-        768: center
-        992: center
+        576: 20%
+        768: 20%
+        992: 20%
         1200: center
 - route: '^/about(/.*)?$'
   images:
-    - src: '/assets/banners/6.jpg'
+    - src:
+        576: '/assets/banners/6_576.jpg'
+        768: '/assets/banners/6_768.jpg'
+        992: '/assets/banners/6_992.jpg'
+        1200: '/assets/banners/6.jpg'
       size:
         1199: cover
         1200: 1200px
 - route: '^/our-day(/.*)?$'
   images:
-    - src: '/assets/banners/1.jpg'
+    - src:
+        576: '/assets/banners/1_576.jpg'
+        768: '/assets/banners/1_768.jpg'
+        992: '/assets/banners/1_992.jpg'
+        1200: '/assets/banners/1.jpg'
       size:
         1199: cover
         1200: 1200px
 - route: '^/accommodations(/.*)?$'
   images:
-    - src: '/assets/banners/12.jpg'
+    - src:
+        576: '/assets/banners/12_576.jpg'
+        768: '/assets/banners/12_768.jpg'
+        992: '/assets/banners/12_992.jpg'
+        1200: '/assets/banners/12.jpg'
       size:
         1199: cover
         1200: 1200px
 - route: '^/photos(/.*)?$'
   images:
-    - src: '/assets/banners/17.jpg'
+    - src:
+        576: '/assets/banners/17_576.jpg'
+        768: '/assets/banners/17_768.jpg'
+        992: '/assets/banners/17_992.jpg'
+        1200: '/assets/banners/17.jpg'
       size:
         1199: cover
         1200: 1200px
@@ -42,7 +62,6 @@
 - route: '^/.*$'
   images:
     - src: '/assets/banners/4.jpg'
-    - src: '/assets/banners/6.jpg'
     - src: '/assets/banners/8.jpg'
     - src: '/assets/banners/15.jpg'
     - src: '/assets/banners/18.jpg'
