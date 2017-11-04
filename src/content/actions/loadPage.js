@@ -8,7 +8,7 @@ export const LOADED_PAGE = 'LOADED_PAGE'
 export const NO_PAGE_FOUND = 'NO_PAGE_FOUND'
 
 async function fetchPage(page) {
-  const response = await fetch(`/${page}.json`)
+  const response = await fetch(`/page/${page}.json`)
 
   if (response.status >= 400) {
     throw new Error(`error retrieving page "${page}": ${response.status}`)

@@ -1,5 +1,6 @@
 ---
 title: Date
+description: Celebrate with us on Saturday, May 12, 2018.
 order: 1
 hideTitle: true
 ---

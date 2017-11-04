@@ -1,5 +1,6 @@
 ---
 title: Nearby attractions
+description: While you're in the area, find other things to do around Frederick, MD the weekend of the wedding.
 ---
 
 While you're in Frederick for the weekend, check out some of these nearby

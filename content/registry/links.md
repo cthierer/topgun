@@ -1,5 +1,6 @@
 ---
 title: Links
+description: Lindsay and Tom are registered at Amazon.com.
 skipBackToTop: true
 ---
 

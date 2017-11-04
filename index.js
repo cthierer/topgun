@@ -11,6 +11,7 @@ const collections = require('metalsmith-collections')
 const defaultValues = require('metalsmith-default-values')
 const metadata = require('metalsmith-metadata')
 const ignore = require('metalsmith-ignore')
+const sitemap = require('metalsmith-sitemap')
 const chalk = require('chalk')
 const moment = require('moment')
 const webpack = require('./plugins/webpack')
@@ -32,7 +33,8 @@ console.log(chalk.bold.green('starting metalsmith build...'))
 
 Metalsmith(__dirname)
   .metadata({
-    sitename: 'Lindsay & Thomas',
+    sitename: 'Lindsay & Thomas\'s Wedding',
+    description: 'Lindsay Southworth and Thomas Clingan will be getting married on May 12, 2018. Read their story, find directions to the ceremony, book a hotel room, and send them a gift.',
     siteheader: 'Lindsay & Thomas',
     eventdate: moment('2018-05-12'),
     hashtags: ['#Stage5Clingan'],
@@ -44,9 +46,10 @@ Metalsmith(__dirname)
     {
       pattern: '**/*.md',
       defaults: {
-        title: '',
-        description: '',
+        title: 'Lindsay & Thomas\'s Wedding',
+        description: 'Lindsay Southworth and Thomas Clingan will be getting married on May 12, 2018. Read their story, find directions to the ceremony, book a hotel room, and send them a gift.',
         collection: [],
+        path: '/',
       },
     },
   ]))
@@ -94,8 +97,14 @@ Metalsmith(__dirname)
     default: 'default.html',
     directory: './layouts',
     pattern: '**/*.html',
+    urlProperty: 'permalink',
   }))
   .use(inlineSource())
+  .use(sitemap({
+    hostname: 'https://www.stage5clingan.com',
+    omitExtension: true,
+    omitIndex: true,
+  }))
   .build((err, files) => {
     if (err) {
       throw err

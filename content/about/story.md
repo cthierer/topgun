@@ -1,5 +1,6 @@
 ---
 title: Our Story
+description: After twelve and half years of dating we finally have a date set for our wedding! It has taken a long time to get here so we are planning an evening worthy of the wait.
 ---
 
 After twelve and half years of dating we finally have a date set for our

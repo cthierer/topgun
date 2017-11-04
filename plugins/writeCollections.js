@@ -74,6 +74,7 @@ module.exports = function init({
             ...contentsObj,
             contents: '',
             collection: [name],
+            path: name,
           },
         }
       })

@@ -1,5 +1,6 @@
 ---
 title: Venue & Directions
+description: Find directions to the ceremony and reception, hosted at the Stone Manor Country Club in Middletown, MD.
 order: 2
 ---
 

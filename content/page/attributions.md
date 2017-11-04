@@ -1,5 +1,6 @@
 ---
 title: Attributions
+private: true
 ---
 
 #### Photos
