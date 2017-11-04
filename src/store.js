@@ -1,7 +1,6 @@
 
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
 import reduxThunk from 'redux-thunk'
-import { createLogger } from 'redux-logger'
 import { connectRoutes, NOT_FOUND, redirect } from 'redux-first-router'
 import restoreScroll from 'redux-first-router-restore-scroll'
 import createHistory from 'history/createBrowserHistory'
@@ -83,14 +82,18 @@ const rootReducer = combineReducers({
   gallery: galleryReducer,
 })
 
-const middlewares = applyMiddleware(
+const middlewares = [
   routeMiddleware,
   reduxThunk,
-  createLogger(),
-)
+]
+
+if (process.env.NODE_ENV !== 'production') {
+  const { logger } = require('redux-logger') // eslint-disable-line global-require
+  middlewares.push(logger)
+}
 
 export default createStore(
   rootReducer,
   initialState,
-  compose(routeEnhancer, middlewares),
+  compose(routeEnhancer, applyMiddleware(...middlewares)),
 )
