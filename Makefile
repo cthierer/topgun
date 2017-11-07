@@ -12,5 +12,11 @@ optimize-images:
 analyze-bundle:
 	@./node_modules/.bin/webpack --config webpack.production.js --json | ./node_modules/.bin/webpack-bundle-size-analyzer
 
-thumbnails:
-	./node_modules/.bin/thumb ./albums/engagement ./albums/engagement
+buildgallery-engagement:
+	@rm -rf dist/galleries/engagement
+	@mkdir -p dist/galleries/engagement
+	node ./buildGallery albums/engagement dist/galleries/engagement https://cdn.stage5clingan.com/galleries/engagement
+
+buildgallery-index:
+	@mkdir -p dist/galleries
+	node ./buildGalleryIndex.js dist/galleries https://cdn.stage5clingan.com/galleries
