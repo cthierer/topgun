@@ -29,7 +29,8 @@ export default function GalleryList({
       />
       {(navLinks.length > 0 || !!description) && <hr className="accent" />}
       <div id="contents" className="galleries">
-        {galleries.map(gallery => <Gallery {...gallery} screenWidth={screenWidth} />)}
+        {galleries.map(gallery =>
+          <Gallery key={gallery.slug} {...gallery} screenWidth={screenWidth} />)}
       </div>
     </div>
   )

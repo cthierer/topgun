@@ -12,7 +12,12 @@ function generateLinks(links) {
     target,
   }) => {
     if (href) {
-      return <a className="nav-link sweep-to-bottom" href={href} target={target}>{label}</a>
+      return (<a
+        className="nav-link sweep-to-bottom"
+        key={href}
+        href={href}
+        target={target}
+      >{label}</a>)
     }
     return (
       <NavLink

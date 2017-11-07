@@ -3,6 +3,12 @@ import React from 'react'
 import GalleryLibrary from 'react-photo-gallery'
 import Lightbox from 'react-images'
 
+/* global window */
+
+function openImage({ linkTo }) {
+  if (linkTo) window.open(linkTo)
+}
+
 class Gallery extends React.Component {
   constructor() {
     super()
@@ -32,7 +38,7 @@ class Gallery extends React.Component {
       <div className="gallery">
         <h3>{title}</h3>
         <GalleryLibrary
-          photos={images}
+          photos={images.map(({ linkTo: _linkTo, ...img }) => img)}
           onClick={(e, { index }) => this.setState({ currentImage: index, lightboxIsOpen: true })}
           columns={numColumns}
         />
@@ -55,9 +61,9 @@ class Gallery extends React.Component {
           onClose={() => this.setState({ currentImage: 0, lightboxIsOpen: false })}
           onClickPrev={() => this.setState({ currentImage: this.state.currentImage - 1 })}
           onClickNext={() => this.setState({ currentImage: this.state.currentImage + 1 })}
+          onClickImage={() => openImage(this.props.images[this.state.currentImage])}
           currentImage={this.state.currentImage}
           isOpen={this.state.lightboxIsOpen}
-          width={(screenWidth - 200) || screenWidth}
         />
       </div>
     )
