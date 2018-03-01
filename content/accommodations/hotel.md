@@ -1,6 +1,7 @@
 ---
 title: Hotel
 description: Book a hotel at the Hilton Garden Inn in Frederick, MD for the wedding weekend.
+order: 1
 ---
 
 A block of rooms has been reserved at the
