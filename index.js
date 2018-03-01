@@ -73,6 +73,7 @@ Metalsmith(__dirname)
     accommodations: {
       pattern: 'accommodations/**/*.md',
       metadata: 'content/accommodations/_collection.yml',
+      sortBy: 'order',
     },
     'our-day': {
       pattern: 'our-day/**/*.md',
