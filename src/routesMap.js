@@ -4,8 +4,15 @@ import loadCollection from './content/actions/loadCollection'
 import loadPage from './content/actions/loadPage'
 import updateMetadata from './metadata/actions/updateMetadata'
 import fetchGalleries from './gallery/actions/fetchGalleries'
+import config from './config'
 
 const aliases = new Map([])
+
+const {
+  baseUri: {
+    galleries: galleriesBaseUri = 'https://cdn.stage5clingan.com/galleries',
+  },
+} = config
 
 export default {
   ROUTE_TO_LANDING: {
@@ -19,7 +26,7 @@ export default {
   ROUTE_TO_GALLERIES: {
     path: '/photos/:gallery?',
     thunk: async (dispatch) => {
-      dispatch(fetchGalleries())
+      dispatch(fetchGalleries(`${galleriesBaseUri}/index.json`))
       dispatch(updateMetadata({
         title: 'Photos',
       }))
