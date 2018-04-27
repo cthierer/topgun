@@ -35,14 +35,19 @@ export default {
         await dispatch(fetchGalleries(`${galleriesBaseUri}/index.json`))
       }
 
+      const {
+        gallery: { galleries: loaded = [] } = {},
+      } = getState()
+
       if (gallery) {
-        const matching = galleries.find(({ slug }) => slug === gallery)
-        dispatch(updateMetadata({ title: matching.title }))
-      } else {
-        dispatch(updateMetadata({
-          title: 'Photos',
-        }))
+        const { title = 'Photos' } = loaded.find(({ slug }) => slug === gallery) || {}
+        dispatch(updateMetadata({ title }))
+        return
       }
+
+      dispatch(updateMetadata({
+        title: 'Photos',
+      }))
     },
   },
   ROUTE_TO_PAGE: {
