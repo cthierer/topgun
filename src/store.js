@@ -30,6 +30,9 @@ const {
       if (type === 'ROUTE_TO_SECTION') {
         const { payload: { collection, page } = {} } = locationState
         return page || collection
+      } else if (type === 'ROUTE_TO_GALLERIES') {
+        const { payload: { gallery } = {} } = locationState
+        return gallery || true
       }
 
       return true
@@ -43,6 +46,7 @@ const {
         type,
         meta: {
           location: {
+            kind = 'load',
             current: {
               pathname,
               payload: {
@@ -50,6 +54,7 @@ const {
               } = {},
             },
             prev: {
+              pathname: prevPathname,
               payload: {
                 collection: prevCollection,
               } = {},
@@ -60,9 +65,16 @@ const {
     },
   ) => {
     if (type === NOT_FOUND) dispatch(redirect({ type: 'ROUTE_TO_LANDING' }))
-    if (nextCollection !== prevCollection || nextCollection === undefined) {
-      dispatch(changeBanner(pathname))
+    if (
+      kind !== 'load' &&
+      (pathname.startsWith(prevPathname) || prevPathname.startsWith(pathname))
+    ) {
+      return
     }
+    if (nextCollection === prevCollection && typeof prevCollection !== 'undefined') {
+      return
+    }
+    dispatch(changeBanner(pathname))
   },
   onAfterChange: (dispatch, getState) => {
     const { location: { pathname } = {} } = getState()

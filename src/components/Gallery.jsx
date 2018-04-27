@@ -2,6 +2,7 @@
 import React from 'react'
 import GalleryLibrary from 'react-photo-gallery'
 import Lightbox from 'react-images'
+import Link from 'redux-first-router-link'
 
 /* global window */
 
@@ -18,8 +19,10 @@ class Gallery extends React.Component {
   render() {
     const {
       title,
+      slug,
       images,
       screenWidth,
+      skipBackToTop = true,
     } = this.props
 
     let numColumns
@@ -35,7 +38,7 @@ class Gallery extends React.Component {
     }
 
     return (
-      <div className="gallery">
+      <div className="gallery" id={slug}>
         <h3>{title}</h3>
         <GalleryLibrary
           photos={images.map(({ linkTo: _linkTo, ...img }) => img)}
@@ -65,6 +68,14 @@ class Gallery extends React.Component {
           currentImage={this.state.currentImage}
           isOpen={this.state.lightboxIsOpen}
         />
+        {!skipBackToTop &&
+          <div className="back-to-top">
+            {/* eslint-disable jsx-a11y/anchor-is-valid */}
+            <Link to="/photos">Back to top</Link>
+            {/* eslint-disable jsx-a11y/anchor-is-valid */}
+          </div>
+        }
+        <hr />
       </div>
     )
   }

@@ -16,7 +16,7 @@ export default function GalleryList({
   const collapse = screenWidth < 768
   const navLinks = galleries.map(({ title, slug }) => ({
     label: title,
-    path: `/galleries/${slug}`,
+    path: `/photos/${slug}`,
   }))
 
   return (
@@ -29,8 +29,14 @@ export default function GalleryList({
       />
       {(navLinks.length > 0 || !!description) && <hr className="accent" />}
       <div id="contents" className="galleries">
-        {galleries.map(gallery =>
-          <Gallery key={gallery.slug} {...gallery} screenWidth={screenWidth} />)}
+        {galleries.map(gallery => (
+          <Gallery
+            key={gallery.slug}
+            skipBackToTop={galleries.length <= 1}
+            {...gallery}
+            screenWidth={screenWidth}
+          />
+        ))}
       </div>
     </div>
   )

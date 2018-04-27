@@ -25,11 +25,24 @@ export default {
   },
   ROUTE_TO_GALLERIES: {
     path: '/photos/:gallery?',
-    thunk: async (dispatch) => {
-      dispatch(fetchGalleries(`${galleriesBaseUri}/index.json`))
-      dispatch(updateMetadata({
-        title: 'Photos',
-      }))
+    thunk: async (dispatch, getState) => {
+      const {
+        gallery: { galleries = [], loading = false } = {},
+        location: { payload: { gallery } = {} } = {},
+      } = getState()
+
+      if (galleries.length < 1 && !loading) {
+        await dispatch(fetchGalleries(`${galleriesBaseUri}/index.json`))
+      }
+
+      if (gallery) {
+        const matching = galleries.find(({ slug }) => slug === gallery)
+        dispatch(updateMetadata({ title: matching.title }))
+      } else {
+        dispatch(updateMetadata({
+          title: 'Photos',
+        }))
+      }
     },
   },
   ROUTE_TO_PAGE: {

@@ -1,7 +1,7 @@
 
 const config = {
   baseUri: {
-    galleries: 'http://cdn-develop.stage5clingan.com/galleries',
+    galleries: 'https://cdn-develop.stage5clingan.com/galleries',
   },
 }
 
