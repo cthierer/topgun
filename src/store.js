@@ -10,6 +10,7 @@ import metadataReducer from './metadata/reducer'
 import coreReducer from './core/reducer'
 import changeBanner from './core/actions/changeBanner'
 import galleryReducer from './gallery/reducer'
+import uploaderReducer from './uploader/reducer'
 import routesMap from './routesMap'
 
 /* global window */
@@ -92,6 +93,7 @@ const rootReducer = combineReducers({
   metadata: metadataReducer,
   core: coreReducer,
   gallery: galleryReducer,
+  uploader: uploaderReducer,
 })
 
 const middlewares = [

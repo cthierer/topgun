@@ -40,6 +40,22 @@
   display: inline-block;
 }
 
+.panel {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  padding: 8px 16px;
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-bottom: 2em;
+
+  &.bg-dark {
+    background-color: var(--color-slate-blue);
+    border: 1px solid var(--color-slate-blue-darker);
+    border-radius: 4px;
+    color: var(--gray-light);
+  }
+}
+
 #contents {
   font-size: 1.25rem;
   line-height: 1.5em;

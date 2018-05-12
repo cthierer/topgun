@@ -12,6 +12,10 @@ export default function GalleryList({
   galleries,
   screenWidth,
   loading,
+  finishUpload,
+  startUpload,
+  handleUploadError,
+  uploads = {},
 }) {
   const collapse = screenWidth < 768
   const navLinks = galleries.map(({ title, slug }) => ({
@@ -35,6 +39,10 @@ export default function GalleryList({
             skipBackToTop={galleries.length <= 1}
             {...gallery}
             screenWidth={screenWidth}
+            finishUpload={finishUpload}
+            startUpload={startUpload}
+            handleUploadError={handleUploadError}
+            uploads={uploads[gallery.slug]}
           />
         ))}
       </div>

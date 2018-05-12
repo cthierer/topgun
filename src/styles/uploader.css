@@ -1,0 +1,30 @@
+
+.upload-preview {
+  display: inline-block;
+  max-width: 154px;
+  padding: 4px;
+  text-align: center;
+  text-transform: lowercase;
+}
+
+.dropzone-container {
+  width: calc(100% - 45px);
+  display: block;
+  height: 200px;
+  border: 2px dashed var(--color-slate-blue);
+  background-color: var(--gray-light);
+  border-radius: 5px;
+  margin: 15px 20px;
+  color: var(--color-slate-blue-darker);
+  text-align: center;
+}
+
+.instructions {
+  padding: 15px;
+  font-size: .9em;
+}
+
+.instructions a {
+  color: var(--gray-light);
+  text-decoration: underline;
+}

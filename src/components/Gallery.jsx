@@ -3,6 +3,7 @@ import React from 'react'
 import GalleryLibrary from 'react-photo-gallery'
 import Lightbox from 'react-images'
 import Link from 'redux-first-router-link'
+import Uploader from './Uploader'
 
 /* global window */
 
@@ -23,6 +24,11 @@ class Gallery extends React.Component {
       images,
       screenWidth,
       skipBackToTop = true,
+      writeable = false,
+      finishUpload,
+      startUpload,
+      handleUploadError,
+      uploads = [],
     } = this.props
 
     let numColumns
@@ -40,6 +46,13 @@ class Gallery extends React.Component {
     return (
       <div className="gallery" id={slug}>
         <h3>{title}</h3>
+        {writeable && <Uploader
+          gallery={slug}
+          finishUpload={finishUpload}
+          startUpload={startUpload}
+          handleUploadError={handleUploadError}
+          uploads={uploads}
+        />}
         <GalleryLibrary
           photos={images.map(({ linkTo: _linkTo, ...img }) => img)}
           onClick={(e, { index }) => this.setState({ currentImage: index, lightboxIsOpen: true })}
