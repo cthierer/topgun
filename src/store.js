@@ -68,7 +68,8 @@ const {
     if (type === NOT_FOUND) dispatch(redirect({ type: 'ROUTE_TO_LANDING' }))
     if (
       kind !== 'load' &&
-      (pathname.startsWith(prevPathname) || prevPathname.startsWith(pathname))
+      (pathname.startsWith(prevPathname) || prevPathname.startsWith(pathname)) &&
+      prevPathname.length > 1
     ) {
       return
     }
